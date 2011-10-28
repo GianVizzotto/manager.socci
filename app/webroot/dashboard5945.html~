@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.scheetzdesigns.com/adminpro/dashboard.php?color=454E51 by HTTrack Website Copier/3.x [XR&CO'2008], Tue, 25 Oct 2011 02:45:27 GMT -->
+<head>
+<meta charset="utf-8" />
+<!--<meta http-equiv="x-ua-compatible" content="ie=edge" />-->
+
+<!-- Apple iOS Web App Settings -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="images/apple-touch-logo.png"/>
+<script type="text/javascript"> 
+	(function () {
+		var filename = navigator.platform === 'iPad' ?
+	   		'splash-screen-768x1004.png' : 'splash-screen-640x920.png';
+	  	document.write(
+	    	'<link rel="apple-touch-startup-image" ' +
+	          'href="images/' + filename + '" />' );
+	})();
+</script>
+<!-- END Apple iOS Web App Settings -->
+
+<title>AdminPro</title>
+
+<!--	Load the master stylesheet
+		Note: This is a PHP file that loads like a CSS file. This way, we can include
+		a custom color very quickly and easily. -->
+<link rel="stylesheet" href="css/master5945.css?color=454E51" type="text/css" media="screen" />
+
+
+<!--	Load the "Chosen" stylesheet. You can remove this if your
+		select boxes aren't going to make use of the awesome Chosen script. -->
+<link rel="stylesheet" href="js/chosen/chosen.css" type="text/css" media="screen" />
+
+<!--	Load the Fancybox stylesheet. You can remove this if you
+		are not going to be lightboxing any images. -->
+<link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+<!--	Load the jQuery Library - We're loading in the header because there are quite a few dependencies that require
+		The library while the rest of the page loads. These include Highcharts and the Tablesorter scripts. -->
+<script src="js/jquery/1.6.2/jquery.min.js"></script>
+
+<!--	Load the Charting/Graph scripts. You can remove this if you will not be displaying any charts. -->
+<script src="js/flot.js" type="text/javascript"></script>
+<script src="js/graphtable.js" type="text/javascript"></script>
+
+<!--	Load the Tablesorter script. You can remove this if you will not be displaying any sortable tables. -->
+<script src="js/jquery.tablesorter.min.js" type="text/javascript"></script>
+<script src="js/jquery.tablesorter.pager.js" type="text/javascript"></script>
+
+<!--	Load the Chosen script. You can remove this if you will not be displaying any custom select boxes. -->
+<script src="js/chosen/chosen.jquery.js" type="text/javascript"></script>
+
+<!--	Load the Fancybox script. You can remove this if you will not be displaying any image lightboxes. -->
+<script src="js/fancybox/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>
+
+<!--	Load the AdminPro custom script. THIS IS REQUIRED, but elements within can be removed if unnecessary. -->
+<script src="js/custom.js"></script>
+
+<!--	Set up the responsive design sizes. You probably don't want to mess with these AT ALL. -->
+<script type="text/javascript">
+	var ADAPT_CONFIG = {
+	  	path: 'css/',
+	  	dynamic: true,
+		callback: resizeGalleries,
+	 	range: [
+	    	'0px    to 420px  /// mobile.php?color=454E51&orientation=portrait',
+	    	'420px  to 760px  /// mobile.php?color=454E51&orientation=landscape',
+	    	'760px  to 980px  /// 720.php?color=454E51',
+	    	'980px  to 1480px /// 960.css',
+	    	'1480px			  /// 1400.css'
+	  	]
+	};
+</script>
+
+<!--	Load the Adapt script. This is what changes and resizes elements as you shrink the browser or
+		view the AdminPro template on mobile devices. Try it out! -->
+<script src="js/adapt.min.js"></script>
+
+
+</head>
+<body>
+
+
+<!--	AdminPro uses a version of the 960 Grid System that was customized for this template. It includes just 4 columns that
+		are fluid width and change automatically as you scale down the browser size. -->
+
+<!--
+
+	container_4			The main container for each row. Each one needs this, so don't forget it.
+					
+						OPTIONS:
+						no-space		Remove all margins/padding from the container and its columns.
+						header-wrap		Just the style for the header.
+					
+	grid_1, grid_2,
+	grid_3, grid_4		Each one of these is a column style, and you need to add them to the container
+						to add up to 4. So if you add a grid_3, you'll need a grid_1. A grid_2 needs
+						another grid_2, etc.
+
+-->
+	
+	
+	
+<!-- BEGIN HEADER - A lot of the top stuff is custom, so if you want to change it you'll need to edit this file as well
+		 as the master.php and other sized stylesheets. -->
+		 		
+<div class="container_4 no-space header-wrap">
+
+	<div id="header">
+	
+		<!-- LOGO -->
+		<div id="logo" class="grid_3"><h1>Admin Pro</h1></div>
+		
+		<!-- EYEBROW NAVIGATION -->
+		<div id="eyebrow-navigation" class="grid_1">
+			<a href="#" class="settings">Settings</a>
+			<a href="index.html" class="signout">Sign Out</a>
+		</div>
+		
+		<!-- MAIN NAVIGATION WITH ICON CLASSES -->
+<div id="main-navigation">
+	<div class="nav-wrap clearfix">
+		<div class="grid_3">
+		
+			<!-- Regular Navigation
+				 Each nav item has a different class, you'll notice. This is what creates the different icons you see.
+				 To add a new one, simply create a new PNG and create the class for it in "master.php" -->
+				 
+			<!-- The class "hide-on-mobile" will hide this navigation on a small mobile device. -->
+			<ul class="hide-on-mobile">
+				<li><a href="dashboard.html" class="dashboard active">Dashboard</a></li>
+				<li><a href="grid.html" class="grid">Grid Styles</a></li>
+				<li><a href="page.html" class="page">Page Layout</a></li>
+				<li><a href="stats.html" class="stats">Statistics</a></li>
+				<li><a href="gallery.html" class="gallery">Gallery</a></li>
+				<li><a href="forms.html" class="forms">Form Styling</a></li>
+				<li><a href="#" class="calendar">Calendar</a></li>
+				<li><a href="#" class="users">Users</a></li>
+				<li><a href="#" class="messages">Messages<span class="counter">4</span></a></li>
+			</ul>
+			
+			<!-- The class "show-on-mobile" will show only this navigation on a small mobile device. It's a
+			 	 dropdown select box that loads the page upon select. Dependant on JS within "custom.js" -->
+			<div class="show-on-mobile">
+				<div class="mobile-nav-wrap">
+					<select name="navigation" class="mobile-navigation">
+						<option value="">Choose a Page...</option>
+						<option value="dashboard.php">Dashboard</option>
+						<option value="grid.php">Grid Styles</option>
+						<option value="page.php">Page Layout</option>
+						<option value="stats.php">Statistics</option>
+						<option value="gallery.php">Gallery</option>
+						<option value="forms.php">Form Styling</option>
+						<option value="#">Calendar</option>
+						<option value="#">Users</option>
+						<option value="#">Messages</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<!-- END GRID_3 -->
+		
+		<!-- SEARCH BLOCK -->
+		<div id="search" class="grid_1">
+			<form action="http://demo.scheetzdesigns.com/adminpro/dashboard.php">
+				<input type="text" class="search" value="Search..." />
+				<input type="submit" class="go" />
+			</form>
+		</div>
+		<!-- END GRID_1 -->
+		
+	</div>
+	<!-- END NAV WRAP -->
+	
+</div>
+<!-- END MAIN NAVIGATION -->		
+	</div>
+	<!-- END HEADER -->
+	
+</div>
+<!-- END CONTAINER_4 - HEADER -->
+
+
+<!-- BEGIN SUBNAVIGATION -->
+<div class="container_4 no-space">
+	<div id="subpages" class="clearfix">
+		<div class="grid_4">
+			<div class="subpage-wrap">
+				<ul>
+					<li><a href="#">Subpage One</a></li>
+					<li><a href="#">Subpage Two</a></li>
+					<li><a href="#">Subpage Three</a></li>
+					<li><a href="#">Subpage Four</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END SUBNAVIGATION -->
+
+
+
+<!-- BEGIN PAGE BREADCRUMBS/TITLE -->
+<div class="container_4 no-space">
+	<div id="page-heading" class="clearfix">
+		
+		<div class="grid_2 title-crumbs">
+			<div class="page-wrap">
+				<a href="#">Home</a> / <a href="#">Page Layout</a> /<br />
+				<h2>Subpage Three Example</h2>
+			</div>
+		</div>
+		<div class="grid_2 align_right">
+			<div class="page-wrap">
+				<a href="#" class="button medium">Medium Button</a>
+				<a href="#" class="button red medium">Another Medium Button</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END PAGE BREADCRUMBS/TITLE -->
+
+
+
+<!-- BEGIN FULL WIDTH ERROR BLOCK -->
+<div class="container_4 no-space push-down">
+	<div class="alert-wrapper error clearfix">
+		<div class="alert-text">
+			This is a full width error! You can let users know there has been a problem with this alert style.
+			<a href="#" class="close">Close</a>
+		</div>
+	</div>
+</div>
+<!-- END FULL WIDTH ERROR BLOCK -->
+
+
+
+<!-- BEGIN CHARTS & GRAPHS EXAMPLE
+	 Simply create a table, following the structure outlined below, and add the "statics" class to it. The jQuery code will
+	 automatically generate a chart for you! -->
+	 
+<div class="container_4">
+	<div class="grid_4">
+		<div class="panel">
+			<h2 class="cap">Charts &amp; Graphs</h2>
+			<div class="content">
+				<table class="statics" style="width : 100%;"> 
+					<thead> 
+						<tr> 
+							<th></th> 
+							<th style="color: #E83D0E;">Unique Visitors</th> 
+							<th style="color: #2a68a2;">Pageviews</th> 
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr> 
+							<th>1</th><td>256</td><td>1207</td> 
+						</tr> 
+						<tr> 
+							<th>2</th><td>203</td><td>1000</td> 
+						</tr> 
+						<tr> 
+							<th>3</th><td>241</td><td>1050</td> 
+						</tr> 
+						<tr> 
+							<th>4</th><td>227</td><td>1143</td> 
+						</tr> 
+						<tr> 
+							<th>5</th><td>220</td><td>1027</td> 
+						</tr> 
+						<tr> 
+							<th>6</th><td>219</td><td>939</td> 
+						</tr> 
+						<tr> 
+							<th>7</th><td>260</td><td>1163</td> 
+						</tr> 
+						<tr> 
+							<th>8</th><td>235</td><td>1301</td> 
+						</tr> 
+						<tr> 
+							<th>9</th><td>277</td><td>1439</td> 
+						</tr> 
+						<tr> 
+							<th>10</th><td>245</td><td>1508</td> 
+						</tr> 
+						<tr> 
+							<th>11</th><td>249</td><td>1200</td> 
+						</tr> 
+						<tr> 
+							<th>12</th><td>240</td><td>1213</td> 
+						</tr> 
+						<tr> 
+							<th>13</th><td>246</td><td>1200</td> 
+						</tr> 
+						<tr> 
+							<th>14</th><td>256</td><td>1444</td> 
+						</tr> 
+						<tr> 
+							<th>15</th><td>227</td><td>1069</td> 
+						</tr> 
+						<tr> 
+							<th>16</th><td>221</td><td>1158</td> 
+						</tr> 
+						<tr> 
+							<th>17</th><td>266</td><td>1384</td> 
+						</tr> 
+						<tr> 
+							<th>18</th><td>247</td><td>1395</td> 
+						</tr> 
+						<tr> 
+							<th>19</th><td>286</td><td>1729</td> 
+						</tr> 
+						<tr> 
+							<th>20</th><td>224</td><td>1175</td> 
+						</tr> 
+						<tr> 
+							<th>21</th><td>225</td><td>1026</td> 
+						</tr> 
+						<tr> 
+							<th>22</th><td>216</td><td>994</td> 
+						</tr> 
+						<tr> 
+							<th>23</th><td>179</td><td>762</td> 
+						</tr> 
+						<tr> 
+							<th>24</th><td>259</td><td>1151</td> 
+						</tr> 
+						<tr> 
+							<th>25</th><td>191</td><td>978</td> 
+						</tr> 
+						<tr> 
+							<th>26</th><td>196</td><td>1069</td> 
+						</tr> 
+						<tr> 
+							<th>27</th><td>209</td><td>1189</td> 
+						</tr> 
+						<tr> 
+							<th>28</th><td>199</td><td>1099</td> 
+						</tr> 
+						<tr> 
+							<th>29</th><td>225</td><td>1215</td> 
+						</tr> 
+						<tr> 
+							<th>30</th><td>228</td><td>973</td> 
+						</tr> 
+						<tr> 
+							<th>31</th><td>258</td><td>1462</td> 
+						</tr> 
+					</tbody> 
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- BEGIN CHARTS & GRAPHS EXAMPLE -->
+
+
+	 	
+<div class="container_4">
+
+	<!-- BEGIN TABLESORTER EXAMPLE
+		 Tablesorter documentation can be found at their website:
+	 
+	 		http://tablesorter.com/docs/ -->
+	
+	<div class="grid_2">
+		<div class="panel">
+			<h2 class="cap">Paginated, Sortable Tables</h2>
+			<div class="content">			
+				
+				<table id="tablesorter-sample" class="tablesorter styled"> 
+					<thead> 
+						<tr> 
+							<th class="checkbox-row"><input type="checkbox" class="checkall" /></th> 
+							<th>First Name</th> 
+							<th>Last Name</th> 
+							<th class="options-row">Options</th> 
+						</tr> 
+					</thead> 
+					<tbody> 
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>John</td> 
+							<td>Smith</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>Bruce</td> 
+							<td>Franklin</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>Clark</td> 
+							<td>Deets</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>Mary</td> 
+							<td>Pots</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>George</td> 
+							<td>Rhiner</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>William</td> 
+							<td>Cobs</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>John</td> 
+							<td>Smith</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>Bruce</td> 
+							<td>Franklin</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>Clark</td> 
+							<td>Deets</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>Mary</td> 
+							<td>Pots</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>George</td> 
+							<td>Rhiner</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>William</td> 
+							<td>Cobs</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>John</td> 
+							<td>Smith</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>Bruce</td> 
+							<td>Franklin</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>Clark</td> 
+							<td>Deets</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>Mary</td> 
+							<td>Pots</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>George</td> 
+							<td>Rhiner</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="checkbox" /></td> 
+							<td>William</td> 
+							<td>Cobs</td> 
+							<td class="center"><a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a></td> 
+						</tr>
+					</tbody> 
+				</table>
+				
+				<div id="table-pager-1" class="pager">
+					<div class="table-options">
+						<a class="button red small" href="#">Delete</a>
+						<a class="button blue small" href="#">Edit</a>
+					</div>
+					<form>
+						<select class="pagesize">
+							<option selected="selected" value="10">10</option>
+							<option value="20">20</option>
+							<option value="30">30</option>
+							<option value="40">40</option>
+						</select>
+						<a class="button small green first"><img src="images/table_pager_first.png" alt="First" /></a>
+						<a class="button small green prev"><img src="images/table_pager_previous.png" alt="Previous" /></a>
+						<input type="text" class="pagedisplay" disabled="disabled" />
+						<a class="button small green next"><img src="images/table_pager_next.png" alt="Next" /></a>
+						<a class="button small green last"><img src="images/table_pager_last.png" alt="Last" /></a>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<!-- END TABLESORTER EXAMPLE -->
+	
+	
+	<!-- BEGIN TABBED PANEL EXAMPLE
+	 	 It's very simple to set up tabs, simply follow the structure below and you'll have
+	 	 tabs in no time. -->
+	
+	<div class="grid_2">
+		<div class="panel">
+			<h2 class="cap">Tabbed Panel</h2>
+			
+			<!-- The tabs -->
+			<ul class="tabs">
+			    <li><a href="#tab1">Tab One</a></li>
+			    <li><a href="#tab2">Tab Two</a></li>
+			</ul>
+			
+			<!-- The tabbed content area -->
+			<div class="content tabbed">
+				<div class="tab_container">
+				
+					<!-- TAB ONE -->
+				    <div id="tab1" class="tab_content">
+				        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+				        <h4>It's easy to create tabs:</h4>
+				        <p><code>
+				        	&lt;ul class="tabs"&gt;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#tab1"&gt;Tab One&lt;/a&gt;&lt;/li&gt;<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#tab2"&gt;Tab Two&lt;/a&gt;&lt;/li&gt;<br />
+							&lt;/ul&gt;
+				        </code></p>
+				        <p><code>
+				        	&lt;div class="tab_container"&gt;<br />
+				    		&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="tab1" class="tab_content"&gt;&lt;!-- Tab One Content --&gt;&lt;/div&gt;<br />
+				    		&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="tab2" class="tab_content"&gt;&lt;!-- Tab Two Content --&gt;&lt;/div&gt;<br />
+				    		&lt;/div&gt;
+				        </code></p>
+				    </div>
+				    
+				    <!-- TAB TWO -->
+				    <div id="tab2" class="tab_content">
+				       <div class="alert-wrapper info clearfix push-down">
+							<div class="alert-text">
+								Alerts can be in tabs as well!
+								<a href="#" class="close">Close</a>
+							</div>
+						</div>
+				       	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				       	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END TABS EXAMPLE -->
+	
+</div>
+
+
+
+
+<div class="container_4">
+
+	<!-- BEGIN PLAIN TEXT EXAMPLE
+	 	 The simplest one of all, just some regular ol' text in a panel. -->
+
+	<div class="grid_1">
+		<div class="panel">
+			<h2 class="cap">Plain Text Panel</h2>
+			<div class="content">
+				<h3>Lorem Ipsum Dolar Sit</h3>
+				<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- BEGIN GALLERY EXAMPLE
+	 	 Probably the most complex panel. This one was built from scratch and
+	 	 features checkboxes to select images, pagination and Fancybox integration. -->
+	 	 
+	<div class="grid_3">
+		<div class="panel">
+			<h2 class="cap">Gallery Panel</h2>
+			
+			<!-- Be sure you're keeping to this exact structure! -->
+			<div class="content gallery">
+				<div class="gallery-wrap">
+					<div class="gallery-pager">
+					
+						<!-- The first gallery item! -->
+						<div class="gallery-item">
+							
+							<!-- Here's the image with a link to the large version for lightboxing -->
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_01.jpg"><img src="images/gallery_thumb_01.jpg" alt="Gallery Item 01" /></a>
+							
+							<!-- A hidden checked layer for when you check the checkbox over the image. -->
+							<div class="checked-layer"></div>
+							
+							<!-- Edit and Delete options on each image - These become small icons on the bottom right. -->
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							
+							<!-- The checkbox to select an individual image. -->
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						<!-- END GALLERY ITEM -->
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_02.jpg"><img src="images/gallery_thumb_02.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_03.jpg"><img src="images/gallery_thumb_03.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_04.jpg"><img src="images/gallery_thumb_04.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_03.jpg"><img src="images/gallery_thumb_03.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_01.jpg"><img src="images/gallery_thumb_01.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_04.jpg"><img src="images/gallery_thumb_04.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_02.jpg"><img src="images/gallery_thumb_02.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_01.jpg"><img src="images/gallery_thumb_01.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_02.jpg"><img src="images/gallery_thumb_02.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_03.jpg"><img src="images/gallery_thumb_03.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_04.jpg"><img src="images/gallery_thumb_04.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_02.jpg"><img src="images/gallery_thumb_02.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_03.jpg"><img src="images/gallery_thumb_03.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_04.jpg"><img src="images/gallery_thumb_04.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_03.jpg"><img src="images/gallery_thumb_03.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_01.jpg"><img src="images/gallery_thumb_01.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+						
+						<!-- GALLERY ITEM -->
+						<div class="gallery-item">
+							<a title="Gallery Image Title" class="fancybox" href="images/gallery_image_04.jpg"><img src="images/gallery_thumb_04.jpg" alt="Gallery Item 01" /></a>
+							<div class="checked-layer"></div>
+							<div class="item-options">
+								<a class="icon-button edit" href="#">Edit</a><a class="icon-button delete" href="#">Delete</a>
+							</div>
+							<div class="checkbox-block">
+								<input type="checkbox" value="1" />
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<!-- The gallery pagination/options area. -->
+				<div class="pager">
+				
+					<!-- Gallery options - these should probably become active once you've checked an image or more. -->
+					<div class="gallery-options">
+						<a class="button red small" href="#">Delete</a>
+						<a class="button blue small" href="#">Edit</a>
+					</div>
+					
+					<!-- Gallery pagination -->
+					<form>
+						<a class="button small green first"><img src="images/table_pager_first.png" alt="First" /></a>
+						<a class="button small green prev"><img src="images/table_pager_previous.png" alt="Previous" /></a>
+						<input type="text" class="pagedisplay" disabled="disabled" />
+						<a class="button small green next"><img src="images/table_pager_next.png" alt="Next" /></a>
+						<a class="button small green last"><img src="images/table_pager_last.png" alt="Last" /></a>
+					</form>
+				</div>
+			
+			</div>
+			<!-- END CONTENT -->
+			
+		</div>
+		<!-- END PANEL -->
+		
+	</div>
+	<!-- END GRID_3/GALLERY -->
+	
+</div>
+
+
+
+<div class="container_4">
+
+	<!-- BEGIN FORM STYLING -->
+	
+	<div class="grid_2">
+		<div class="panel">
+			<h2 class="cap">Form Styling &amp; Functionality</h2>
+			<div class="content">
+			
+				<!-- Any form you want to use this custom styling with must have the class "styled" -->
+				<form action="http://demo.scheetzdesigns.com/adminpro/dashboard.php" method="get" class="styled">
+					<fieldset>
+					
+						<legend>This is the Form Legend</legend>
+						
+						<!-- Text Field -->
+						<label for="textField">
+							<span>Enter your Name:</span>
+							<input id="textField" class="textbox" name="textField" type="text" value="" />
+						</label>
+						
+						<!-- Text Field with Extras-->
+						<label for="phoneField">
+							<span>Enter your Phone Number:</span>
+							<input id="phoneField" class="textbox small" name="phoneField" type="text" value="" />
+							<small>Description for this field goes here.</small>
+						</label>
+						
+						<!-- Text Area -->
+						<label for="textArea">
+							<span>Comments:</span>
+							<textarea id="textArea" class="textarea" name="textArea"></textarea>
+						</label>
+						
+						<!-- Checkboxes -->
+						<div class="non-label-section">
+							<span>Check some boxes:</span>
+							
+							<input id="checkbox1" class="checkbox" name="checkbox1" type="checkbox" />
+							<label for="checkbox1">Checkbox One</label>
+							
+							<br />
+							
+							<input id="checkbox2" class="checkbox" name="checkbox2" type="checkbox" />
+							<label for="checkbox2">Checkbox Two</label>
+							
+							<br />
+							
+							<input id="checkbox3" class="checkbox" name="checkbox3" type="checkbox" />
+							<label for="checkbox3">Checkbox Three</label>
+							
+						</div>
+						
+						<!-- Radio Buttons -->
+						<div class="non-label-section">
+							<span>Select an option:</span>
+							
+							<input id="radio1" class="radio" name="radio1" type="radio" />
+							<label for="radio1">Option One</label>
+							
+							<br />
+							
+							<input id="radio2" class="radio" name="radio2" type="radio" />
+							<label for="radio2">Option Two</label>
+							
+							<br />
+							
+							<input id="radio3" class="radio" name="radio3" type="radio" />
+							<label for="radio3">Option Three</label>
+							
+						</div>
+						
+						<!-- Custom Upload Field -->
+						<label for="uploadField" class="hide-on-mobile hide-on-tablet">
+							<span>Upload a File:</span>
+							<input id="uploadField" type="file" class="file" name="uploadField[upload]" />
+						</label>
+						
+						<!-- Progress Bars -->
+						<div class="non-label-section">
+							<span>Progress Bars:</span>
+							<div class="progress-bar"><div class="bar" style="width:30%">30 Percent</div></div>
+							<div class="progress-bar"><div class="bar red" style="width:50%">50 Percent</div></div>
+							<div class="progress-bar"><div class="bar blue" style="width:20%">20 Percent</div></div>
+							<div class="progress-bar"><div class="bar green" style="width:80%">80 Percent</div></div>
+							<div class="progress-bar"><div class="bar yellow" style="width:60%">60 Percent</div></div>
+							<div class="progress-bar"><div class="bar white" style="width:40%">40 Percent</div></div>
+						</div>
+						
+						<!-- "Chosen" Select Box -->
+						<label for="selectBox">
+							<span>Select Something:</span>
+							<select id="selectBox" class="chosen" name="selectBox">
+								<option value="0" selected="selected">Select an Option...</option>
+								<option value="1">Searchable</option>
+								<option value="1">Select</option>
+								<option value="1">Boxes</option>
+								<option value="1">Are</option>
+								<option value="1">Awesome</option>
+								<option value="1">There</option>
+								<option value="1">Are</option>
+								<option value="1">Lots</option>
+								<option value="1">Of Great</option>
+								<option value="1">Options</option>
+								<option value="1">For These</option>
+								<option value="1">Select</option>
+								<option value="1">Fields</option>
+							</select>
+						</label>
+						
+						<!-- Buttons -->
+						<div class="non-label-section">
+							<a class="button medium green float_right">Submit</a>
+							<span><a class="button small">Cancel</a></span>
+						</div>
+					
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!-- END FORM STYLING -->
+	
+	
+	
+	<!-- BEGIN ACCORDIAN BLOCK -->
+	
+	<div class="grid_2">
+		<div class="panel accordion">
+			<h2 class="cap">Accordian Functionality</h2>
+			<div class="accordion-wrapper">
+			
+				<!-- Each accordian block has an <h3> for the title and a "accordion-content" for the content.
+					 They must be structured this way or the functionality won't work. -->
+					 
+				<!-- ACCORDION BLOCK -->
+				<div class="accordion-block">
+					<h3>This is the first accordion slide in the list.</h3>
+					<div class="accordion-content">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h4>
+	
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+					</div>
+				</div>
+				
+				<!-- ACCORDION BLOCK -->
+				<div class="accordion-block">
+					<h3>Just click an accordion block to view it.</h3>
+					<div class="accordion-content">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h4>
+	
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+					</div>
+				</div>
+				
+				<!-- ACCORDION BLOCK -->
+				<div class="accordion-block">
+					<h3>The code is simple and structured. jQuery takes care of the rest! And hey, this one has two lines of text!</h3>
+					<div class="accordion-content">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h4>
+	
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+					</div>
+				</div>
+				
+				<!-- ACCORDION BLOCK -->
+				<div class="accordion-block">
+					<h3>Just a few more panels to fill out the space in this wonderful demo. Wow, another one with two whole lines of text.</h3>
+					<div class="accordion-content">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h4>
+	
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+					</div>
+				</div>
+				
+				<!-- ACCORDION BLOCK -->
+				<div class="accordion-block">
+					<h3>Are you enjoying the demo so far? I hope so!</h3>
+					<div class="accordion-content">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h4>
+	
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+					</div>
+				</div>
+				
+				<!-- ACCORDION BLOCK -->
+				<div class="accordion-block">
+					<h3>And finally, the last accordion block in the list.</h3>
+					<div class="accordion-content">
+						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</h4>
+	
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END ACCORDION BLOCK -->
+	
+</div>
+
+
+
+<!-- ALERTS & BUTTONS -->
+<div class="container_4">
+	<div class="grid_3">
+		<div class="panel">
+			<h2 class="cap">Alerts &amp; Buttons Panel</h2>
+			<div class="content">
+			
+				<!-- ERROR ALERT -->
+				<div class="alert-wrapper error clearfix">
+					<div class="alert-text">
+						This is an error! You can let users know there has been a problem with this alert style.
+						<a href="#" class="close">Close</a>
+					</div>
+				</div>
+				
+				<!-- WARNING ALERT -->
+				<div class="alert-wrapper warning clearfix">
+					<div class="alert-text">
+						This is a warning! You can warn users of important things with this alert style.
+						<a href="#" class="close">Close</a>
+					</div>
+				</div>
+				
+				<!-- CONFIRMATION ALERT -->
+				<div class="alert-wrapper confirm clearfix">
+					<div class="alert-text">
+						This is a confirmation message! You can let users know everything is working as planned.
+						<a href="#" class="close">Close</a>
+					</div>
+				</div>
+				
+				<!-- INFORMATIVE ALERT -->
+				<div class="alert-wrapper info clearfix push-down">
+					<div class="alert-text">
+						This is an info message! You can send your users an important update.
+						<a href="#" class="close">Close</a>
+					</div>
+				</div>
+				
+				<!-- SMALL BUTTONS -->
+				<p>
+					<a href="#" class="button small">Button</a>
+					<a href="#" class="button small red">Button</a>
+					<a href="#" class="button small blue">Button</a>
+					<a href="#" class="button small yellow">Button</a>
+					<a href="#" class="button small green">Button</a>
+				</p>
+				
+				<!-- MEDIUM BUTTONS -->
+				<p>
+					<a href="#" class="button medium">Button</a>
+					<a href="#" class="button medium red">Button</a>
+					<a href="#" class="button medium blue">Button</a>
+					<a href="#" class="button medium yellow">Button</a>
+					<a href="#" class="button medium green">Button</a>
+				</p>
+				
+				<!-- LARGE BUTTONS -->
+				<p>
+					<a href="#" class="button large">Button</a>
+					<a href="#" class="button large red">Button</a>
+					<a href="#" class="button large blue">Button</a>
+					<a href="#" class="button large yellow">Button</a>
+					<a href="#" class="button large green">Button</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- NEWS PANEL -->
+	<div class="grid_1">
+		<div class="panel">
+			<h2 class="cap">News Updates Panel</h2>
+			<div class="content">
+			
+				<!-- NEWS ITEM -->
+				<h4><a class="blue" href="#">This is a news title and this is a news block.</a></h4>
+				<p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong></p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+				<p><a href="#" class="button blue small">Read More</a></p>
+				<!-- END NEWS ITEM -->
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer" class="container_4">
+	<div class="grid_2">Copyright &copy;2011 Admin Pro by Justin Scheetz</div>
+	<div class="grid_2 align_right"><a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Feedback</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Support</a></div>
+</div>
+<!-- END FOOTER -->
+
+</body>
+
+<!-- Mirrored from demo.scheetzdesigns.com/adminpro/dashboard.php?color=454E51 by HTTrack Website Copier/3.x [XR&CO'2008], Tue, 25 Oct 2011 02:46:01 GMT -->
+</html>
