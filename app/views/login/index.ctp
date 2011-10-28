@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from demo.scheetzdesigns.com/adminpro/index.php by HTTrack Website Copier/3.x [XR&CO'2008], Tue, 25 Oct 2011 02:46:20 GMT -->
 <head>
 <meta charset="utf-8" />
-<!--<meta http-equiv="x-ua-compatible" content="ie=edge" />-->
+
 
 <!-- Apple iOS Web App Settings -->
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -22,7 +21,7 @@
 </script>
 <!-- END Apple iOS Web App Settings -->
 
-<title>AdminPro</title>
+<title>Socci Manager</title>
 
 <!--	Load the master stylesheet
 		Note: This is a PHP file that loads like a CSS file. This way, we can include
@@ -38,7 +37,7 @@
 <div id="login-wrapper">
 
 	<!-- Display the Logo -->
-	<div id="logo"><h1>AdminPro</h1></div>
+	<div id="logo"><h1>Socci WebManager</h1></div>
 	
 	<!-- Start the white form block -->
 	<div id="login-form">
@@ -57,13 +56,13 @@
 		
 			<!-- Username Field -->
 			<label for="username">
-				<span>Username:</span>
+				<span>Login:</span>
 				<input class="textbox" type="text" name="username" value="" />
 			</label>
 			
 			<!-- Password Field -->
 			<label for="password">
-				<span>Password:</span>
+				<span>Senha:</span>
 				<input class="textbox" type="password" name="password" value="" />
 			</label>
 			

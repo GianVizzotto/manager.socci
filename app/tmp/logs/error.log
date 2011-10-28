@@ -1,3 +1,0 @@
-2011-10-19 01:12:58 Warning: Warning (512): /var/www/manager.socci/app/tmp/cache/ is not writable in [/var/www/manager.socci/cake/libs/cache/file.php, line 267]
-2011-10-19 01:12:58 Warning: Warning (512): /persistent/ is not writable in [/var/www/manager.socci/cake/libs/cache/file.php, line 267]
-2011-10-19 01:12:58 Warning: Warning (512): /models/ is not writable in [/var/www/manager.socci/cake/libs/cache/file.php, line 267]

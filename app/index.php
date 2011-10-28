@@ -16,5 +16,4 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-echo date('Y/m/d');
 require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';
