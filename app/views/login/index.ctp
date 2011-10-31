@@ -1,89 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 <meta charset="utf-8" />
-
-
-<!-- Apple iOS Web App Settings -->
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link rel="apple-touch-icon" href="img/apple-touch-logo.png"/>
-<script type="text/javascript"> 
-	(function () {
-		var filename = navigator.platform === 'iPad' ?
-	   		'splash-screen-768x1004.png' : 'splash-screen-640x920.png';
-	  	document.write(
-	    	'<link rel="apple-touch-startup-image" ' +
-	          'href="img/' + filename + '" />' );
-	})();
-</script>
-<!-- END Apple iOS Web App Settings -->
-
 <title>Socci Manager</title>
-
-<!--	Load the master stylesheet
-		Note: This is a PHP file that loads like a CSS file. This way, we can include
-		a custom color very quickly and easily. -->
-<link rel="stylesheet" href="css/master51a5.css?color=454E51&amp;login=true" type="text/css" media="screen" />
-
-
+<?php echo $this->Html->css("/css/master51a5.css?color=454E51&amp;login=true") ;?>
 </head>
-<body>
 
-<!-- This is the login page, so it has a few custom CSS styles. -->
+<body>
 	
 <div id="login-wrapper">
-
 	<!-- Display the Logo -->
 	<div id="logo"><h1>Socci WebManager</h1></div>
-	
-	<!-- Start the white form block -->
-	<div id="login-form">
 		
-		<!-- An error alert example -->
-		<div class="alert-wrapper error">
+	<div id="login-form">
+		<div class="alert-wrapper error" style="display:<?php echo isset($error) ? $error == true ? 'block' : 'none' : 'none' ; ?>;">
 			<div class="alert-text">
-				This is an error alert!
-				<a href="#" class="close">Close</a>
+				Dados de acesso inválidos.
 			</div>
 		</div>
-		
-		<!-- Start the actual form, link it to the dashboard.
-			 You'll need to enter your own custom login script here -->
-		<form class="styled" action="dashboard.html" method="post">
+
+		<?php echo $this->Form->create('Funcionario' , array (
+			'url' => array( 
+				'controller' => 'login',
+				'action' => 'index'
+				),
+			'class' => 'styled',
+			'inputDefaults' => array( 
+				'label' => false,
+				'div'   => false,
+				'error' => array(
+					'wrap'  => 'span',
+					'class' => 'my-error-class'
+						)
+					)
+				)
+		 	); ?>
 		
 			<!-- Username Field -->
 			<label for="username">
-				<span>Login:</span>
-				<input class="textbox" type="text" name="username" value="" />
+				<span>E-mail:</span>
+				<?php echo $this->Form->input('email_corp' , array('type' => 'text') ) ;?>
 			</label>
 			
 			<!-- Password Field -->
 			<label for="password">
 				<span>Senha:</span>
-				<input class="textbox" type="password" name="password" value="" />
+				<?php echo $this->Form->input('senha' , array('type' => 'password') );?>
 			</label>
 			
 			<!-- Login button with custom CSS classes -->
-			<input class="button red small" type="submit" value="Login" />
-			
-		</form>
+						
+			<?php echo $this->Form->button('Login' , array ( 'div' => false , 'class' => 'button red small') ) ;?>
+			<?php echo $this->Form->end() ;?>
 		
 	</div>
 	
 	<!-- Some footer text, totally optional of course -->
-	<div class="under-form">Copyright &copy;2011 Company Name</div>
+	<div class="under-form">Copyright &copy;2011 Socci</div>
 
 </div>
 
-<!-- Load the jQuery Library and custom.js for the error alerts.
-	 You can remove this block if you don't need error alerts on the login form page. -->
-<script src="js/jquery/1.6.2/jquery.min.js"></script>
-<script src="js/custom.js"></script>
-
 </body>
-
-<!-- Mirrored from demo.scheetzdesigns.com/adminpro/index.php by HTTrack Website Copier/3.x [XR&CO'2008], Tue, 25 Oct 2011 02:46:21 GMT -->
 </html>

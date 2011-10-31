@@ -84,13 +84,13 @@ class DATABASE_CONFIG {
 		'prefix' => '',
 	);
 
-	var $test = array(
+	var $entidades = array(
 		'driver' => 'mysqli',
 		'persistent' => false,
 		'host' => '127.0.0.1',
 		'login' => 'root',
 		'password' => 'takeiteasy',
-		'database' => 'proj01',
-		'prefix' => 'proj01',
+		'database' => 'entidades',
+		'prefix' => '',
 	);
 }
