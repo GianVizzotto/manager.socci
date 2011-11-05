@@ -36,6 +36,7 @@
 				)
 		 	); ?>
 		
+		<?php echo $this->Session->flash('auth'); ?>
 			<!-- Username Field -->
 			<label for="username">
 				<span>E-mail:</span>
@@ -45,7 +46,7 @@
 			<!-- Password Field -->
 			<label for="password">
 				<span>Senha:</span>
-				<?php echo $this->Form->input('senha2');?>
+				<?php echo $this->Form->input('password');?>
 			</label>
 			
 			<!-- Login button with custom CSS classes -->
