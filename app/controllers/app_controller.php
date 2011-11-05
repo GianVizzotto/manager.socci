@@ -38,24 +38,40 @@ class AppController extends Controller {
 	
 	var $components = array (
 			'Auth' => array(
-				'authorize' => 'actions',
+				'authorize' => 'controller',
 			    'actionPath' => 'controllers/',
 		        'loginAction' => array(
 		        	'controller' => 'login',
 		        	'action' => 'login',
 		        	'plugin' => false,
 		        	'admin' => false,
-					)
-				),
-			'Session'		
+					),
+				'allowedActions' => array ('*')	
+			),
+			'Session'						
 		);
 	
 	function beforeFilter(){
 		
 		$this->layout='manager_layout';
+		
 		$this->Auth->userModel = 'Funcionario' ;
 		
+//		var_dump(Configure::read('logado'));
+		
+//		var_dump($this->Auth->user());
+		
+//		if(!$this->Auth->user()){
+//			
+//			$this->redirect('/login/logout');
+//			
+//		}
+		
+//		$this->Auth->authorize = 'login';
+			
 		
 	}
+	
+	
 	
 }

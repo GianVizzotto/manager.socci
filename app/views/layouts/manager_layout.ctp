@@ -116,7 +116,7 @@
 		<!-- EYEBROW NAVIGATION -->
 		<div id="eyebrow-navigation" class="grid_1">
 			<a href="#" class="settings">Settings</a>
-			<a href="index.html" class="signout">Sign Out</a>
+			<a href="/login/logout" class="signout">Sign Out</a>
 		</div>
 		
 		<!-- MAIN NAVIGATION WITH ICON CLASSES -->

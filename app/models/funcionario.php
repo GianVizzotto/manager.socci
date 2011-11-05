@@ -62,5 +62,5 @@ class Funcionario extends AppModel {
 		}			
 			
 	}
-	
+		
 }

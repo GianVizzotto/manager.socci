@@ -24,8 +24,8 @@ class UsuariosController extends AppController {
 		
 		$this->layout = 'manager_layout' ;
 		
-		$this->set('teste' , 'teste') ;
-				
+		
+						
 	}
 	
 }

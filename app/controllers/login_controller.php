@@ -6,24 +6,25 @@ class LoginController extends AppController {
 	
 	var $name = 'Login' ;
 	var $uses = array ('Funcionario') ;
+	var $logado = false ;
 	
 	function beforeFilter(){
 		
 		$this->Auth->userModel = 'Funcionario' ;
-		$this->Auth->fields = array(
-			'username' => 'email_corp',
-			'password' => 'senha'
-		);
-		$this->Auth->autoRedirect = false;
-//		$this->Auth->loginRedirect = array('controller' => 'dashboard' , 'action' => 'index') ;
-//		$this->Auth->loginError = "No Way! Get Out of Here!" ;
+		$this->Auth->fields['username'] = 'email_corp' ;
+		$this->Auth->fields['password'] = 'password' ;
+		
+		 
+		//$this->Auth->autoRedirect = false;
+		$this->Auth->loginRedirect = array('controller' => 'dashboard' , 'action' => 'index') ;
+		$this->Auth->loginError = "<span class=small>Usuário e/ou Senha inválido(s)</span>" ;
 		
 	}	
 	
 	function index () {
 //		
 //		$this->layout = '' ;
-//		$this->redirect('login');
+//		
 //		
 //		$this->layout = '';
 ////	Verifica se há dados em POST		
@@ -70,14 +71,16 @@ class LoginController extends AppController {
 		
 		$this->layout = '' ;
 		
-		echo "<font color = white>";
-		echo print_r( $this->data ) ;
-		
-	
-		echo "<font>";
+//		if ($this->Auth->user()){
+//			$this->redirect('/dashboard/index');
+////			echo "Ta logado"
+//;		}
+//		Configure::write('logado' , true);
+
+//		var_dump($this->Auth->user());
  	
     }
-    
+
     function logout() {
     	
     	$this->redirect($this->Auth->logout());
