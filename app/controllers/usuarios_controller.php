@@ -63,7 +63,7 @@ class UsuariosController extends AppController {
 				$this->data['Funcionario']['password'] = $this->Auth->password($this->data['Funcionario']['password']) ;
 			
 				$result = $this->Funcionario->save($this->data);
-				
+//				var_dump($result);
 				if($result){
 					
 					$this->Session->setFlash('Usuário cadastrado com sucesso!', 'flash_confirm');

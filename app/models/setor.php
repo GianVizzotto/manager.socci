@@ -47,5 +47,19 @@ class Setor extends AppModel {
 		}
 	}
 	
+	function getSetores(){
+		
+		$setores =	$this->find('list' , array(
+						'fields' => array(
+							'id',
+							'nome'
+								)
+							)
+						);
+
+		return $setores ;
+					
+	}
+	
 	
 }
