@@ -6,6 +6,16 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+			<name>com.aptana.ide.core.unifiedBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.aptana.editor.php.aptanaPhpBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>org.eclipse.wst.validation.validationbuilder</name>
 			<arguments>
 			</arguments>
@@ -17,6 +27,7 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>com.aptana.editor.php.phpNature</nature>
 		<nature>org.eclipse.php.core.PHPNature</nature>
 	</natures>
 </projectDescription>
