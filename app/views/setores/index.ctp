@@ -9,7 +9,7 @@
 		</div>
 		<div class="grid_2 align_right">
 			<div class="page-wrap">
-				<a href="/bancos/add" class="button red medium">Adicionar Banco</a>
+				<a href="/setores/add" class="button red medium">Adicionar Setor da Empresa</a>
 			</div>
 		</div>
 	</div>
@@ -32,27 +32,27 @@
 	
 	<div class="grid_4">
 		<div class="panel">
-			<h2 class="cap">Lista de Bancos</h2>
+			<h2 class="cap">Lista de Setores da Empresa</h2>
 			<div class="content">			
 				
 				<table id="tablesorter-sample" class="tablesorter styled"> 
 					<thead> 
 						<tr> 
 							<th class="checkbox-row"><input type="checkbox" class="checkall" /></th> 
-							<th>Nome do Banco</th> 
-							<th>N&uacute;mero do Banco</th> 
+							<th>Nome do Setor</th> 
+							<th>Descri&ccedil;&atilde;o do Setor</th> 
 							<th class="options-row">Op&ccedil;&otilde;es</th> 
 						</tr> 
 					</thead> 
 					<tbody>
 						
-						<?php foreach ($bancos as $banco) :?>
+						<?php foreach ($setores as $setor) :?>
 							
 						<tr> 
 							<td><input type="checkbox" name="checkbox" /></td> 
-							<td><?php echo $banco['Banco']['nome'];?></td> 
-							<td><?php echo $banco['Banco']['numero'];?></td> 
-							<td class="center"><a class="icon-button edit" href="/bancos/edit/<?php echo $banco['Banco']['id'] ?>">Editar</a><a class="icon-button delete" href="/bancos/remove/<?php echo $banco['Banco']['id'] ?>"">Remover</a></td> 
+							<td><?php echo $setor['Setor']['nome'];?></td> 
+							<td><?php echo $setor['Setor']['descricao'];?></td> 
+							<td class="center"><a class="icon-button edit" href="/setores/edit/<?php echo $setor['Setor']['id'] ?>">Editar</a><a class="icon-button delete" href="/setores/remove/<?php echo $setor['Setor']['id'] ?>"">Remover</a></td> 
 						</tr>
 						
 						<?php endforeach;?>
