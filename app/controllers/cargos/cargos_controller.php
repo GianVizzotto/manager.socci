@@ -15,14 +15,14 @@ class CargosController extends AppController {
 	
 	function index () {
 		
-		$this->layout = '';
+		$this->layout = 'manager_layout';
 		$this->set('cargos',$this->Cargo->find('all'));		
 
 		
 	}
 	
 	function edit($id = null){
-		$this->layout = '';
+		$this->layout = 'manager_layout';
 		
 		$this->Cargo->id = Sanitize::clean($id);
 		
@@ -55,7 +55,7 @@ class CargosController extends AppController {
 	}
 	
 	function add(){
-		$this->layout = '';
+		$this->layout = 'manager_layout';
 		
 		if (!empty($this->data)){
 			$this->Cargo->set($this->data);
