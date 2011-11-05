@@ -43,6 +43,7 @@
 		The library while the rest of the page loads. These include Highcharts and the Tablesorter scripts. -->
 
 <?php echo $this->Javascript->link('/js/jquery/1.6.2/jquery.min.js') ;?>
+<?php echo $this->Javascript->link('/js/jquery.maskedinput-1.3.min.js') ;?>
 
 <!--	Load the Charting/Graph scripts. You can remove this if you will not be displaying any charts. -->
 <script src="assets/js/flot.js" type="text/javascript"></script>
