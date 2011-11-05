@@ -47,5 +47,19 @@ class Cargo extends AppModel {
 		}
 	}
 	
+	function getCargos(){
+		
+		$cargos = $this->find('list' , array(
+					'fields' => array(
+						'id',
+						'nome'
+							)
+						)
+					);
+
+		return $cargos ;
+					
+	}
+	
 	
 }

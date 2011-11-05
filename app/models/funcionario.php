@@ -20,10 +20,47 @@ class Funcionario extends AppModel {
 			'rule' => 'email',
 			'message' => 'Digite seu email.'
 			),
-		'senha' => array(
+		'email_pessoal' => array(
+			'rule' => 'email',
+			'message' => 'Digite seu email.'
+			),	
+		'password' => array(
 			'rule' => 'notEmpty',
 			'message' => 'Digite sua senha.'
-			)	
+			),
+		'nome' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio'
+			),
+		'sobrenome'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio'
+			),
+		'data_nascimento'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio'
+			),	
+		'data_contratacao'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio'
+			),
+		'cpf'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio'
+			),
+		'rg'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio'
+			),	
+		'ctps'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio'
+			),
+		'ctps'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio'
+			),			
+			
 		);
 	
 	/**
@@ -62,5 +99,44 @@ class Funcionario extends AppModel {
 		}			
 			
 	}
+	
+	/**
+	 * 
+	 * Função que lista os usuários cadastrados no sistema
+	 * @param array $filtros
+	 */
+	
+	function listaUsuarios( ){
 		
+		$funcionarios =	$this->find('all' , array(
+							'fields' => array(
+								'Funcionario.id',
+								'Funcionario.nome',
+								'Funcionario.sobrenome',
+								'Setor.nome'
+								),
+							'joins' => array(
+								array(
+									'table' => 'setores',
+									'alias' => 'Setor',
+									'type'	=>	'INNER',
+									'conditions' => array( 'Funcionario.setor_id = Setor.id'	)
+									)
+								),
+							'conditions' => array('Funcionario.status_usuario_id' => 1 )	
+							)
+						);
+						
+		return $funcionarios ;						
+			
+	}
+	
+	function invalidaLogin ( $usuario_id ) {
+						
+		$dados['Funcionario']['status_usuario_id'] = 2 ;
+		
+	 	return $this->save($dados);
+		
+	}
+	
 }

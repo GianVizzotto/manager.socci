@@ -21,7 +21,11 @@ class BancosController extends AppController {
 	
 	function edit($id = null){
 		
-		$this->Banco->id = Sanitize::clean($id);
+		if($id != null){
+			
+			$this->Banco->id = Sanitize::clean($id);
+			
+		}
 		
 		if (empty($this->data)){
 			$this->set('bancos', $this->Banco->read());

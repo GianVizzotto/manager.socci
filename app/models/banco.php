@@ -46,5 +46,18 @@ class Banco extends AppModel {
 		}
 	}
 	
+	function getBancos(){
+		
+		$bancos =	$this->find('list' , array(
+						'fields' => array(
+							'id',
+							'nome'
+								)
+							)
+						);
+
+		return $bancos ;
+					
+	}
 	
 }
