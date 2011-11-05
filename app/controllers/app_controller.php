@@ -36,4 +36,26 @@ class AppController extends Controller {
 	
 	var $helpers = array ('Form', 'Html', 'Javascript', 'Number', 'Session') ;
 	
+	var $components = array (
+			'Auth' => array(
+				'authorize' => 'actions',
+			    'actionPath' => 'controllers/',
+		        'loginAction' => array(
+		        	'controller' => 'login',
+		        	'action' => 'login',
+		        	'plugin' => false,
+		        	'admin' => false,
+					)
+				),
+			'Session'		
+		);
+	
+	function beforeFilter(){
+		
+		$this->layout='manager_layout';
+		$this->Auth->userModel = 'Funcionario' ;
+		
+		
+	}
+	
 }

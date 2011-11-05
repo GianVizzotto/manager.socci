@@ -6,10 +6,9 @@ class DashboardController extends AppController {
 	var $uses = array( 'Funcionario' ) ;
 	
 	function index() {
-
-		$this->layout = 'manager_layout' ;
+	
 		
-				
+							
 	}
 	
 }

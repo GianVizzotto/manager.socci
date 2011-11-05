@@ -61,7 +61,7 @@
 <!--	Set up the responsive design sizes. You probably don't want to mess with these AT ALL. -->
 <script type="text/javascript">
 	var ADAPT_CONFIG = {
-	  	path: 'assets/css/',
+	  	path: '/css/',
 	  	dynamic: true,
 		callback: resizeGalleries,
 	 	range: [
@@ -137,7 +137,7 @@
 				<li><a href="gallery.html" class="gallery">Gallery</a></li>
 				<li><a href="forms.html" class="forms">Form Styling</a></li>
 				<li><a href="#" class="calendar">Calendar</a></li>
-				<li><a href="#" class="users">Users</a></li>
+				<li><a href="/usuarios" class="users">Usuários</a></li>
 				<li><a href="#" class="messages">Messages<span class="counter">4</span></a></li>
 			</ul>
 			
@@ -199,3 +199,5 @@
 	</div>
 </div>
 <!-- END SUBNAVIGATION -->
+
+<?php echo $content_for_layout ;?>

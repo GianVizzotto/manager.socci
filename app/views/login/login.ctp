@@ -22,7 +22,7 @@
 		<?php echo $this->Form->create('Funcionario' , array (
 			'url' => array( 
 				'controller' => 'login',
-				'action' => 'index'
+				'action' => 'login'
 				),
 			'class' => 'styled',
 			'inputDefaults' => array( 
@@ -45,7 +45,7 @@
 			<!-- Password Field -->
 			<label for="password">
 				<span>Senha:</span>
-				<?php echo $this->Form->input('senha' , array('type' => 'password') );?>
+				<?php echo $this->Form->input('senha2');?>
 			</label>
 			
 			<!-- Login button with custom CSS classes -->
