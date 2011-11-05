@@ -15,20 +15,14 @@ class BancosController extends AppController {
 	
 	function index () {
 		
-<<<<<<< HEAD
 		$this->layout = 'manager_layout';
 		
-=======
->>>>>>> 9ea2caf9be21a25a4b4701ced4ee307169ad2618
 		$this->set('bancos',$this->Banco->find('all'));
 		
 	}
 	
 	function edit($id = null){
-<<<<<<< HEAD
 		$this->layout = 'manager_layout';
-=======
->>>>>>> 9ea2caf9be21a25a4b4701ced4ee307169ad2618
 		
 		$this->Banco->id = Sanitize::clean($id);
 		
@@ -47,10 +41,7 @@ class BancosController extends AppController {
 	}
 	
 	function add(){
-<<<<<<< HEAD
 		$this->layout = 'manager_layout';
-=======
->>>>>>> 9ea2caf9be21a25a4b4701ced4ee307169ad2618
 		
 		if (!empty($this->data)){
 			$this->Banco->set($this->data);

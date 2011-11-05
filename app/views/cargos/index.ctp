@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 9ea2caf9be21a25a4b4701ced4ee307169ad2618
 <!-- BEGIN PAGE BREADCRUMBS/TITLE -->
 <div class="container_4 no-space">
 	<div id="page-heading" class="clearfix">

@@ -9,7 +9,7 @@
 		</div>
 		<div class="grid_2 align_right">
 			<div class="page-wrap">
-				<a href="/bancos" class="button red medium">Lista de Bancos</a>
+				<a href="/setores" class="button red medium">Lista de Setores da Empresa</a>
 			</div>
 		</div>
 	</div>
@@ -29,14 +29,14 @@
 	 
 	 		http://tablesorter.com/docs/ -->
 	
-	<div class="grid_2">
+	<div class="grid_3">
 		<div class="panel">
-			<h2 class="cap">Editando Banco</h2>
+			<h2 class="cap">Editando Setor da Empresa</h2>
 			<div class="content">			
 				
-			<?php echo $this->Form->create('Banco' , array (
+			<?php echo $this->Form->create('Setor' , array (
 				'url' => array( 
-					'controller' => 'bancos',
+					'controller' => 'setores',
 					'action' => 'edit'
 					),
 				'class' => 'styled',
@@ -53,17 +53,17 @@
 			<fieldset> 	
 			<!-- Nome Field -->
 			<label for="nome">
-				<span>Nome do Banco:</span>
-				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox', 'value' => $bancos['Banco']['nome']) ) ;?>
+				<span>Nome do Setor:</span>
+				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox small', 'value' => $setores['Setor']['nome']) ) ;?>
 			</label>
 			
 			<!-- Numero Field -->
 			<label for="numero">
-				<span>N&uacute;mero do Banco</span>
-				<?php echo $this->Form->input('numero' , array('type' => 'text', 'class' => 'textbox small', 'value' => $bancos['Banco']['numero']) );?>
+				<span>Descri&ccedil;&atilde;o do Banco</span>
+				<?php echo $this->Form->input('descricao' , array('type' => 'text', 'class' => 'textbox', 'value' => $setores['Setor']['descricao']) );?>
 			</label>
 			
-			<?php echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $bancos['Banco']['id']) );?>
+			<?php echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $setores['Setor']['id']) );?>
 			
 			<!-- Login button with custom CSS classes -->
 						

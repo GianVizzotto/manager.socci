@@ -1,3 +1,10 @@
+<script type="text/javascript">
+	
+	jQuery(function($){
+		$("#ContatoTelefone").mask("(99)9999-9999");
+	});
+	
+</script>
 <!-- BEGIN PAGE BREADCRUMBS/TITLE -->
 <div class="container_4 no-space">
 	<div id="page-heading" class="clearfix">
@@ -9,7 +16,7 @@
 		</div>
 		<div class="grid_2 align_right">
 			<div class="page-wrap">
-				<a href="/bancos" class="button red medium">Lista de Bancos</a>
+				<a href="/contatos" class="button red medium">Lista de Contatos de Cliente</a>
 			</div>
 		</div>
 	</div>
@@ -29,14 +36,14 @@
 	 
 	 		http://tablesorter.com/docs/ -->
 	
-	<div class="grid_2">
+	<div class="grid_3">
 		<div class="panel">
-			<h2 class="cap">Editando Banco</h2>
+			<h2 class="cap">Editando Contato de Cliente</h2>
 			<div class="content">			
 				
-			<?php echo $this->Form->create('Banco' , array (
+			<?php echo $this->Form->create('Contato' , array (
 				'url' => array( 
-					'controller' => 'bancos',
+					'controller' => 'contatos',
 					'action' => 'edit'
 					),
 				'class' => 'styled',
@@ -53,17 +60,22 @@
 			<fieldset> 	
 			<!-- Nome Field -->
 			<label for="nome">
-				<span>Nome do Banco:</span>
-				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox', 'value' => $bancos['Banco']['nome']) ) ;?>
+				<span>Nome do Contato:</span>
+				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox small', 'value' => $contatos['Contato']['nome']) ) ;?>
 			</label>
 			
 			<!-- Numero Field -->
-			<label for="numero">
-				<span>N&uacute;mero do Banco</span>
-				<?php echo $this->Form->input('numero' , array('type' => 'text', 'class' => 'textbox small', 'value' => $bancos['Banco']['numero']) );?>
+			<label for="email">
+				<span>Email do Contato</span>
+				<?php echo $this->Form->input('email' , array('type' => 'text', 'class' => 'textbox', 'value' => $contatos['Contato']['email']) );?>
+			</label>
+
+			<label for="telefone">
+				<span>Telefone do Contato</span>
+				<?php echo $this->Form->input('telefone' , array('type' => 'text', 'class' => 'textbox', 'value' => $contatos['Contato']['telefone']) );?>
 			</label>
 			
-			<?php echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $bancos['Banco']['id']) );?>
+			<?php echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $contatos['Contato']['id']) );?>
 			
 			<!-- Login button with custom CSS classes -->
 						
