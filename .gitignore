@@ -1,5 +1,5 @@
 # Lines starting with '#' are considered comments.
 # Ignore any file named foo.txt.
 
-tmp/**/*
-.gitignore 
+*/tmp/**/*
+./.gitignore 
