@@ -5,12 +5,12 @@
 		
 		<div class="grid_2 title-crumbs">
 			<div class="page-wrap">
-				<a href="#">Home</a> / <a href="#">Page Layout</a> /<br />
+				<a href="#">Usuários</a> / <a href="#">Lista</a> /<br />
 			</div>
 		</div>
 		<div class="grid_2 align_right">
 			<div class="page-wrap">
-				<a href="/bancos/add" class="button red medium">Adicionar Banco</a>
+				<a href="/usuarios/add" class="button red medium">Adicionar Usuário</a>
 			</div>
 		</div>
 	</div>
@@ -25,27 +25,29 @@
 	
 	<div class="grid_4">
 		<div class="panel">
-			<h2 class="cap">Lista de Bancos</h2>
+			<h2 class="cap">Lista de Usuários</h2>
 			<div class="content">			
 				
 				<table id="tablesorter-sample" class="tablesorter styled"> 
 					<thead> 
 						<tr> 
-							<th class="checkbox-row"><input type="checkbox" class="checkall" /></th> 
-							<th>Nome do Banco</th> 
-							<th>N&uacute;mero do Banco</th> 
-							<th class="options-row">Op&ccedil;&otilde;es</th> 
+<!--							<th class="checkbox-row"><input type="checkbox" class="checkall" /></th>-->
+							 <th>Código</th>
+							<th>Nome</th> 
+							<th>Setor</th> 
+							<th class="options-row">Opções</th> 
 						</tr> 
 					</thead> 
 					<tbody>
-						
-						<?php foreach ($bancos as $banco) :?>
+			
+						<?php foreach ($funcionarios as $funcionario) :?>
 							
 						<tr> 
-							<td><input type="checkbox" name="checkbox" /></td> 
-							<td><?php echo $banco['Banco']['nome'];?></td> 
-							<td><?php echo $banco['Banco']['numero'];?></td> 
-							<td class="center"><a class="icon-button edit" href="/bancos/edit/<?php echo $banco['Banco']['id'] ?>">Editar</a><a class="icon-button delete" href="/bancos/remove/<?php echo $banco['Banco']['id'] ?>"">Remover</a></td> 
+<!--							<td><input type="checkbox" name="checkbox" /></td>-->
+							<td><?php echo $funcionario['Funcionario']['id'];?></td>  
+							<td><?php echo $funcionario['Funcionario']['nome'].' '.$funcionario['Funcionario']['sobrenome'];?></td> 
+							<td><?php echo $funcionario['Setor']['nome'];?></td>  
+							<td class="center"><a class="icon-button edit" href="/usuarios/add/<?php echo $funcionario['Funcionario']['id'] ?>">Editar</a><a class="icon-button delete" href="/usuarios/remove/<?php echo $funcionario['Funcionario']['id'] ?>"">Remover</a></td> 
 						</tr>
 						
 						<?php endforeach;?>

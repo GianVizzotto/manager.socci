@@ -32,6 +32,9 @@
  * @subpackage    cake.cake.libs.controller
  * @link http://book.cakephp.org/view/957/The-App-Controller
  */
+
+App::Import('Sanitize');
+
 class AppController extends Controller {
 	
 	var $helpers = array ('Form', 'Html', 'Javascript', 'Number', 'Session') ;
