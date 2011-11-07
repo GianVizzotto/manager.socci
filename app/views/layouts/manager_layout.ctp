@@ -202,3 +202,14 @@
 <!-- END SUBNAVIGATION -->
 
 <?php echo $content_for_layout ;?>
+
+<!-- FOOTER -->
+<div id="footer" class="container_4">
+	<div class="grid_2">Copyright &copy;2012 Socci Manager</div>
+	<div class="grid_2 align_right"><a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Feedback</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Support</a></div>
+</div>
+<!-- END FOOTER -->
+
+<?php echo $this->Javascript->link('/js/date_picker.js') ; ?>
+
+</body>

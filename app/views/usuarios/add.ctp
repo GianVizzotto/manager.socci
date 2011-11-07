@@ -1,3 +1,5 @@
+
+<?php echo $this->Html->css('/css/jquery/jquery-ui-1.8.16.custom.css');?>
 <!-- BEGIN PAGE BREADCRUMBS/TITLE -->
 <div class="container_4 no-space">
 	<div id="page-heading" class="clearfix">
@@ -27,8 +29,6 @@
 		<div class="panel">
 			<h2 class="cap">Novo Usuário</h2>
 			<div class="content">
-			
-<!--			<pre><?php //print_r($funcionarios);?></pre>			-->
 				
 			<?php echo $this->Form->create('Funcionario' , array (
 				'url' => array( 
@@ -48,6 +48,7 @@
 			 	
 			<fieldset> 	
 			<!-- Nome Field -->
+				<?php echo $this->Form->input('id' , array('type' => 'hidden', 'class' => 'textbox') ) ;?>
 			<label for="nome">
 				<span>Nome:</span>
 				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox') ) ;?>
@@ -60,12 +61,12 @@
 			
 			<label for="data_nascimento">
 				<span>Data Nascimento:</span>
-				<?php echo $this->Form->input('data_nascimento' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('data_nascimento' , array('type' => 'text', 'class' => 'datepicker') ) ;?>
 			</label>
 			
 			<label for="cpf">
 				<span>Cpf:</span>
-				<?php echo $this->Form->input('cpf' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('cpf' , array('type' => 'text', 'class' => 'cpf') ) ;?>
 			</label>
 			
 			<label for="rg">
@@ -80,7 +81,7 @@
 			
 			<label for="data_contratação">
 				<span>Data Contratação:</span>
-				<?php echo $this->Form->input('data_contratacao' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('data_contratacao' , array('type' => 'text', 'class' => 'datepicker') ) ;?>
 			</label>
 			
 			<label for="email_corporativo">
@@ -93,26 +94,30 @@
 				<?php echo $this->Form->input('password' , array('type' => 'password', 'class' => 'textbox') ) ;?>
 			</label>
 			
+			<?php if(isset( $usuario_id)):
+				echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $usuario_id) ) ;
+			endif;?>
+			
 			<?php echo $this->Form->input('status_usuario_id' , array('type' => 'hidden', 'value' => 1) ) ;?>
 			
 			<label for="email_pessoal">
 				<span>Email Pessoal:</span>
-				<?php echo $this->Form->input('email_pessoal' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('email_pessoal' , array('type' => 'text', 'class' => 'textbox' ) ) ;?>
 			</label>
 			
 			<label for="tel_residencia">
 				<span>Telefone Residencial:</span>
-				<?php echo $this->Form->input('tel_residencia' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('tel_residencia' , array( 'type' => 'text', 'class' => 'telefone' ) ) ;?>
 			</label>
 			
 			<label for="tel_celular">
 				<span>Celular:</span>
-				<?php echo $this->Form->input('tel_celular' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('tel_celular' , array('type' => 'text', 'class' => 'telefone') ) ;?>
 			</label>
 			
 			<label for="tel_adicional">
 				<span>Telefone Adicional:</span>
-				<?php echo $this->Form->input('tel_adicional' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('tel_adicional' , array('type' => 'text', 'class' => 'telefone') ) ;?>
 			</label>
 			
 			<label for="endereco">
@@ -122,12 +127,12 @@
 			
 			<label for="estado">
 				<span>Estado:</span>
-				<?php echo $this->Form->input('estado_id' , array('options' => $estados , 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('estado_id' , array('options' => $estados , 'class' => 'textbox' , 'onchange' => 'mostraCidades(this.value)') ) ;?>
 			</label>
 			
-			<label for="estado">
+			<label id="labelCidades" for="estado" style="display:none;">
 				<span>Cidade:</span>
-				<?php echo $this->Form->input('cidade_id' , array('options' => array('1' => 'Ac') , 'class' => 'textbox') ) ;?>
+				<div id="cidades"></div>
 			</label>
 			
 			<?php // echo $cidades_div ;?>
@@ -176,13 +181,5 @@
 		</div>
 	</div>
 </div>
-
-<!-- FOOTER -->
-<div id="footer" class="container_4">
-	<div class="grid_2">Copyright &copy;2012 Socci Manager</div>
-	<div class="grid_2 align_right"><a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Feedback</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Support</a></div>
-</div>
-<!-- END FOOTER -->
-
-</body>
-</html>
+<?php echo $this->Javascript->link('/js/manager.js') ;?>
+<?php echo $this->Javascript->link('/js/jquery/1.6.2/jquery-ui-1.8.16.custom.min.js') ;?>

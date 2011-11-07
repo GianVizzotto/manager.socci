@@ -139,4 +139,18 @@ class Funcionario extends AppModel {
 		
 	}
 	
+	function addUsuario($dados) {
+		
+		if( $this->save($dados) ) {
+			
+			return true ;
+			
+		} else {
+			
+			return false ;
+			
+		}
+		
+	}
+	
 }
