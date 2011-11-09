@@ -16,6 +16,13 @@
 	</div>
 </div>
 <!-- END PAGE BREADCRUMBS/TITLE -->
+<div class="container_4 no-space push-down">
+	
+	<?php
+		echo $session->flash();
+	?>
+
+</div>
 <div class="container_4">
 
 	<!-- BEGIN TABLESORTER EXAMPLE
