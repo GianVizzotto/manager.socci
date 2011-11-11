@@ -22,7 +22,7 @@
 </script>
 <!-- END Apple iOS Web App Settings -->
 
-<title>Dashboard - Socci Manager</title>
+<title>Socci Manager</title>
 
 <!--	Load the master stylesheet
 		Note: This is a PHP file that loads like a CSS file. This way, we can include
@@ -131,14 +131,14 @@
 				 
 			<!-- The class "hide-on-mobile" will hide this navigation on a small mobile device. -->
 			<ul class="hide-on-mobile">
-				<li><a href="dashboard.html" class="dashboard active">Dashboard</a></li>
-				<li><a href="grid.html" class="grid">Grid Styles</a></li>
-				<li><a href="page.html" class="page">Page Layout</a></li>
-				<li><a href="stats.html" class="stats">Statistics</a></li>
-				<li><a href="gallery.html" class="gallery">Gallery</a></li>
-				<li><a href="forms.html" class="forms">Form Styling</a></li>
+				<li><a href="#" class="dashboard active">Dashboard</a></li>
+				<li><a href="#" class="grid">Grid Styles</a></li>
+				<li><a href="#" class="page">Page Layout</a></li>
+				<li><a href="#" class="stats">Statistics</a></li>
+				<li><a href="#" class="gallery">Gallery</a></li>
+				<li><a href="#" class="forms">Form Styling</a></li>
 				<li><a href="#" class="calendar">Calendar</a></li>
-				<li><a href="/usuarios" class="users">Usuários</a></li>
+				<li><a href="/usuarios" class="users">Administra&ccedil;&atilde;o</a></li>
 				<li><a href="#" class="messages">Messages<span class="counter">4</span></a></li>
 			</ul>
 			
@@ -190,10 +190,10 @@
 		<div class="grid_4">
 			<div class="subpage-wrap">
 				<ul>
-					<li><a href="#">Subpage One</a></li>
-					<li><a href="#">Subpage Two</a></li>
-					<li><a href="#">Subpage Three</a></li>
-					<li><a href="#">Subpage Four</a></li>
+					<li><a href="/usuarios">Cadastro de Funcion&aacute;rios</a></li>
+					<li><a href="/bancos">Cadastro de Bancos</a></li>
+					<li><a href="/cargos">Cadastro de Cargos</a></li>
+					<li><a href="/setores">Cadastro de Setores</a></li>
 				</ul>
 			</div>
 		</div>
@@ -205,8 +205,10 @@
 
 <!-- FOOTER -->
 <div id="footer" class="container_4">
-	<div class="grid_2">Copyright &copy;2012 Socci Manager</div>
+	<div class="grid_2">Copyright &copy; 2012 - Socci Manager</div>
+	<!--
 	<div class="grid_2 align_right"><a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Feedback</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Support</a></div>
+	-->
 </div>
 <!-- END FOOTER -->
 

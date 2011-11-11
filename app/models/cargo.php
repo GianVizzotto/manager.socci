@@ -29,12 +29,10 @@ class Cargo extends AppModel {
 		
 	function addeditCargo($dados){
 		
-		if ($this->validates()){
-			if ($this->save($dados)){
-				return true;
-			}else{
-				return false;
-			}
+		if ($this->save($dados)){
+			return true;
+		}else{
+			return false;
 		}
 		
 	}
