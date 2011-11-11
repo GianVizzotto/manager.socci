@@ -132,13 +132,9 @@
 				<?php echo $this->Form->input('estado_id' , array('options' => $estados , 'class' => 'textbox' , 'onchange' => 'mostraCidades(this.value)') ) ;?>
 			</label>
 			
-			<?php if(empty($this->data['Funcionario']['estado_id'])):?>
-				<div class="cidades">
-					<?php echo $cidades ;?>
-				</div>
-			<?php else :?>
+			<label class="cidades">
 				<?php echo $cidades ;?>
-			<?php endif;?>			
+			</label>
 			<label for="sexo">
 				<span>Sexo:</span>
 				<?php echo $this->Form->input('sexo' , array( 'options' => array( '' => 'Selecione' , 'm' => 'Masculino' , 'f' => 'Feminino' ) , 'class' => 'textbox') ) ;?>

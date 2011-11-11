@@ -115,6 +115,7 @@ class UsuariosController extends AppController {
 		if(isset($this->data['Funcionario']['estado_id'])){
 			
 			$cidades = $this->requestActionHTML('/usuarios/cidades/'.$this->data['Funcionario']['estado_id'].'/'.$this->data['Funcionario']['cidade_id']) ;
+			print_r($cidades);
 			
 		} else {
 			
@@ -165,7 +166,7 @@ class UsuariosController extends AppController {
 			$estado_id = Sanitize::clean($estado_id) ;
 			$cidade_id = Sanitize::clean($cidade_id);
 			$cidades = $this->Cidade->getCidades($estado_id , $cidade_id) ;
-			$cidades = array('' => 'Selecione') + (array)$cidades ;
+
 			
 		} else {
 			
