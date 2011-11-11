@@ -10,19 +10,19 @@ $(document).ready(function() {
 			$(".data").mask("99/99/9999");
 		});
 	   
-	   estado_id = $("#FuncionarioEstadoId").attr('value');
+	   //estado_id = $("#FuncionarioEstadoId").attr('value');
 	   	   
 });
 
 function mostraCidades(estado_id){
 	
-		$.ajax({
-			url:'/usuarios/cidades/'+estado_id,
-			type:'GET',
-			dataType:'html',
-			success: function(result){
-				$(".cidades").html(result);
-			}	
-		});
+	$.ajax({
+		url:'/usuarios/cidades/'+estado_id,
+		type:'GET',
+		dataType:'html',
+		success: function(result){
+			$(".cidades").html(result);
+		}	
+	});
 	
 }

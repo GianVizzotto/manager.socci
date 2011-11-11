@@ -23,7 +23,13 @@ class Cidade extends AppModel {
 			
 			$this->find['conditions'] = array( 'id = '.$cidade_id ) ;
 			
-		}			
+		} else {
+			
+			$cidades = array(''=>'Selecione') + (array)$cidades ;
+			
+		}	
+
+		
 		
 		return $cidades ;
 					
