@@ -4,7 +4,7 @@
 		
 		<div class="grid_2 title-crumbs">
 			<div class="page-wrap">
-				<a href="#">Home</a> / <a href="#">Page Layout</a> /<br />
+				<!--<a href="#">Home</a> / <a href="#">Page Layout</a> /--><br />
 			</div>
 		</div>
 		<div class="grid_2 align_right">
@@ -54,16 +54,16 @@
 			<!-- Nome Field -->
 			<label for="nome">
 				<span>Nome do Setor:</span>
-				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox small', 'value' => $setores['Setor']['nome']) ) ;?>
+				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox small') ) ;?>
 			</label>
 			
 			<!-- Numero Field -->
 			<label for="numero">
 				<span>Descri&ccedil;&atilde;o do Banco</span>
-				<?php echo $this->Form->input('descricao' , array('type' => 'text', 'class' => 'textbox', 'value' => $setores['Setor']['descricao']) );?>
+				<?php echo $this->Form->input('descricao' , array('type' => 'text', 'class' => 'textbox') );?>
 			</label>
 			
-			<?php echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $setores['Setor']['id']) );?>
+			<?php echo $this->Form->input('id' , array('type' => 'hidden') );?>
 			
 			<!-- Login button with custom CSS classes -->
 						
@@ -75,12 +75,3 @@
 	</div>
 </div>
 
-<!-- FOOTER -->
-<div id="footer" class="container_4">
-	<div class="grid_2">Copyright &copy;2012 Socci Manager</div>
-	<div class="grid_2 align_right"><a href="#">Terms of Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Feedback</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Support</a></div>
-</div>
-<!-- END FOOTER -->
-
-</body>
-</html>

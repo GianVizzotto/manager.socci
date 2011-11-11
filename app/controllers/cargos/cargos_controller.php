@@ -23,32 +23,22 @@ class CargosController extends AppController {
 	function edit($id = null){
 		$this->layout = 'manager_layout';
 		
-		$this->Cargo->id = Sanitize::clean($id);
+		if($id != null){
+			$this->Cargo->id = Sanitize::clean($id);
+		}
 		
 		if (empty($this->data)){
-			$this->set('cargos', $this->Cargo->read());
+			$this->data = $this->Cargo->read();
 		}else{
 			$this->Cargo->set($this->data);
-			if ($this->Cargo->addeditCargo(Sanitize::clean($this->data))){
-				$this->Session->setFlash('<div class="container_4 no-space push-down">
-							<div class="alert-wrapper confirm clearfix">
-								<div class="alert-text">
-									Cargo editado com sucesso!
-									<a href="#" class="close">Close</a>
-								</div>
-							</div>
-						</div>');
-				$this->redirect(array('action' => 'index'));
-			}else{
-				$this->Session->setFlash('<div class="container_4 no-space push-down">
-							<div class="alert-wrapper error clearfix">
-								<div class="alert-text">
-									Erro ao editar Cargo!
-									<a href="#" class="close">Close</a>
-								</div>
-							</div>
-						</div>');
-				$this->redirect(array('action' => 'index'));
+			if ($this->Cargo->validates()){
+				if ($this->Cargo->addeditCargo(Sanitize::clean($this->data))){
+					$this->Session->setFlash('Cargo editado com sucesso!', 'flash_confirm');
+					$this->redirect(array('action' => 'index'));
+				}else{
+					$this->Session->setFlash('Erro ao editar Cargo!', 'flash_error');
+					$this->redirect(array('action' => 'index'));
+				}
 			}
 		}
 	}
@@ -60,24 +50,10 @@ class CargosController extends AppController {
 			$this->Cargo->set($this->data);
 			if ($this->Cargo->validates()){
 				if ($this->Cargo->addeditCargo(Sanitize::clean($this->data))){
-					$this->Session->setFlash('<div class="container_4 no-space push-down">
-												<div class="alert-wrapper confirm clearfix">
-													<div class="alert-text">
-														Cargo cadastrado com sucesso!
-														<a href="#" class="close">Close</a>
-													</div>
-												</div>
-											</div>');
+					$this->Session->setFlash('Cargo cadastrado com sucesso!', 'flash_confirm');
 					$this->redirect(array('action' => 'index'));
 				}else{
-					$this->Session->setFlash('<div class="container_4 no-space push-down">
-												<div class="alert-wrapper error clearfix">
-													<div class="alert-text">
-														Error ao cadastrar Cargo!
-														<a href="#" class="close">Close</a>
-													</div>
-												</div>
-											</div>');
+					$this->Session->setFlash('Erro ao cadastrar Cargo!', 'flash_error');
 					$this->redirect(array('action' => 'index'));
 				}
 			}
@@ -87,26 +63,12 @@ class CargosController extends AppController {
 
 	function remove($id){
 		if ($this->Cargo->deleteCargo(Sanitize::clean($id))){
-				$this->Session->setFlash('<div class="container_4 no-space push-down">
-											<div class="alert-wrapper confirm clearfix">
-												<div class="alert-text">
-													Cargo exclu&iacute;do com sucesso!
-													<a href="#" class="close">Close</a>
-												</div>
-											</div>
-										</div>');
-				$this->redirect(array('action' => 'index'));
-			}else{
-				$this->Session->setFlash('<div class="container_4 no-space push-down">
-											<div class="alert-wrapper error clearfix">
-												<div class="alert-text">
-													Erro ao excluir Cargo!
-													<a href="#" class="close">Close</a>
-												</div>
-											</div>
-										</div>');
-				$this->redirect(array('action' => 'index'));
-			}
+			$this->Session->setFlash('Cargo exclu&iacute;do com sucesso!', 'flash_confirm');
+			$this->redirect(array('action' => 'index'));
+		}else{
+			$this->Session->setFlash('Erro ao excluir Cargo!', 'flash_error');
+			$this->redirect(array('action' => 'index'));
+		}
 	}
 	
 }
