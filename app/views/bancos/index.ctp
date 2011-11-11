@@ -1,7 +1,6 @@
 <!-- BEGIN PAGE BREADCRUMBS/TITLE -->
 <div class="container_4 no-space">
 	<div id="page-heading" class="clearfix">
-		
 		<div class="grid_2 title-crumbs">
 			<div class="page-wrap">
 				<a href="#">Home</a> / <a href="#">Page Layout</a> /<br />

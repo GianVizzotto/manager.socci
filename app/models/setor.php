@@ -29,12 +29,10 @@ class Setor extends AppModel {
 		
 	function addeditSetor($dados){
 		
-		if ($this->validates()){
-			if ($this->save($dados)){
-				return true;
-			}else{
-				return false;
-			}
+		if ($this->save($dados)){
+			return true;
+		}else{
+			return false;
 		}
 		
 	}

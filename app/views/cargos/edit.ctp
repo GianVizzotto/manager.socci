@@ -4,7 +4,7 @@
 		
 		<div class="grid_2 title-crumbs">
 			<div class="page-wrap">
-				<a href="#">Home</a> / <a href="#">Page Layout</a> /<br />
+				<!--<a href="#">Home</a> / <a href="#">Page Layout</a> /--><br />
 			</div>
 		</div>
 		<div class="grid_2 align_right">
@@ -54,16 +54,16 @@
 			<!-- Nome Field -->
 			<label for="nome">
 				<span>Nome do Cargo:</span>
-				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox small', 'value' => $cargos['Cargo']['nome']) ) ;?>
+				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox small') ) ;?>
 			</label>
 			
 			<!-- Numero Field -->
 			<label for="descricao">
 				<span>Descri&ccedil;&atilde;o do Cargo</span>
-				<?php echo $this->Form->input('descricao' , array('type' => 'textarea', 'class' => 'textbox', 'value' => $cargos['Cargo']['descricao']) );?>
+				<?php echo $this->Form->input('descricao' , array('type' => 'textarea', 'class' => 'textbox') );?>
 			</label>
 			
-			<?php echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $cargos['Cargo']['id']) );?>
+			<?php echo $this->Form->input('id' , array('type' => 'hidden') );?>
 			
 			<!-- Login button with custom CSS classes -->
 						
@@ -73,4 +73,9 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+
+>>>>>>> c2f899133a49cc495b6127de7f56bef6ea58276d

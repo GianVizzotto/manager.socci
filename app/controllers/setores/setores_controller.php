@@ -24,18 +24,24 @@ class SetoresController extends AppController {
 	function edit($id = null){
 		$this->layout = 'manager_layout';
 		
-		$this->Setor->id = Sanitize::clean($id);
+		if($id != null){
+			
+			$this->Setor->id = Sanitize::clean($id);
+			
+		}
 		
 		if (empty($this->data)){
-			$this->set('setores', $this->Setor->read());
+			$this->data = $this->Setor->read();
 		}else{
 			$this->Setor->set($this->data);
-			if ($this->Setor->addeditSetor(Sanitize::clean($this->data))){
-				$this->Session->setFlash('Setor da empresa editado com sucesso!', 'flash_confirm');
-				$this->redirect(array('action' => 'index'));
-			}else{
-				$this->Session->setFlash('Erro ao editar Setor da empresa!', 'flash_error');
-				$this->redirect(array('action' => 'index'));
+			if ($this->Setor->validates()){
+				if ($this->Setor->addeditSetor(Sanitize::clean($this->data))){
+					$this->Session->setFlash('Setor editado com sucesso!', 'flash_confirm');
+					$this->redirect(array('action' => 'index'));
+				}else{
+					$this->Session->setFlash('Erro ao editar Setor!', 'flash_error');
+					$this->redirect(array('action' => 'index'));
+				}
 			}
 		}
 	}

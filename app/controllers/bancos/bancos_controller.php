@@ -31,15 +31,17 @@ class BancosController extends AppController {
 		}
 		
 		if (empty($this->data)){
-			$this->set('bancos', $this->Banco->read());
+			$this->data = $this->Banco->read();
 		}else{
 			$this->Banco->set($this->data);
-			if ($this->Banco->addeditBanco(Sanitize::clean($this->data))){
-				$this->Session->setFlash('Banco editado com sucesso!', 'flash_confirm');
-				$this->redirect(array('action' => 'index'));
-			}else{
-				$this->Session->setFlash('Erro ao editar Banco!', 'flash_error');
-				$this->redirect(array('action' => 'index'));
+			if ($this->Banco->validates()){
+				if ($this->Banco->addeditBanco(Sanitize::clean($this->data))){
+					$this->Session->setFlash('Banco editado com sucesso!', 'flash_confirm');
+					$this->redirect(array('action' => 'index'));
+				}else{
+					$this->Session->setFlash('Erro ao editar Banco!', 'flash_error');
+					$this->redirect(array('action' => 'index'));
+				}
 			}
 		}
 	}
@@ -67,12 +69,12 @@ class BancosController extends AppController {
 		$this->layout = '' ;
 		
 		if ($this->Banco->deleteBanco(Sanitize::clean($id))){
-				$this->Session->setFlash('Banco exclu&iacute;do com sucesso!', 'flash_confirm');
-				$this->redirect(array('action' => 'index'));
-			}else{
-				$this->Session->setFlash('Erro ao excluir Banco!', 'flash_error');
-				$this->redirect(array('action' => 'index'));
-			}
+			$this->Session->setFlash('Banco exclu&iacute;do com sucesso!', 'flash_confirm');
+			$this->redirect(array('action' => 'index'));
+		}else{
+			$this->Session->setFlash('Erro ao excluir Banco!', 'flash_error');
+			$this->redirect(array('action' => 'index'));
+		}
 	}
 	
 }

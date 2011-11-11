@@ -5,7 +5,7 @@
 		
 		<div class="grid_2 title-crumbs">
 			<div class="page-wrap">
-				<a href="#">Usuários</a> / <a href="#">Lista</a> /<br />
+				<!--<a href="#">Home</a> / <a href="#">Page Layout</a> /--><br />
 			</div>
 		</div>
 		<div class="grid_2 align_right">
@@ -16,6 +16,13 @@
 	</div>
 </div>
 <!-- END PAGE BREADCRUMBS/TITLE -->
+<div class="container_4 no-space push-down">
+	
+	<?php
+		echo $session->flash();
+	?>
+
+</div>
 <div class="container_4">
 
 	<!-- BEGIN TABLESORTER EXAMPLE
