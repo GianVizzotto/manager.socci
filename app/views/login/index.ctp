@@ -22,7 +22,7 @@
 		<?php echo $this->Form->create('Funcionario' , array (
 			'url' => array( 
 				'controller' => 'login',
-				'action' => 'login'
+				'action' => 'index'
 				),
 			'class' => 'styled',
 			'inputDefaults' => array( 
@@ -36,7 +36,7 @@
 				)
 		 	); ?>
 		
-		<?php echo $this->Session->flash('auth'); ?>
+		<?php //echo $this->Session->flash('auth'); ?>
 			<!-- Username Field -->
 			<label for="username">
 				<span>E-mail:</span>

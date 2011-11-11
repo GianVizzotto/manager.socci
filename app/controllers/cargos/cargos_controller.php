@@ -86,6 +86,9 @@ class CargosController extends AppController {
 	}
 
 	function remove($id){
+		
+		$this->layout = '' ;
+		
 		if ($this->Cargo->deleteCargo(Sanitize::clean($id))){
 				$this->Session->setFlash('<div class="container_4 no-space push-down">
 											<div class="alert-wrapper confirm clearfix">

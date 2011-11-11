@@ -40,17 +40,17 @@ class AppController extends Controller {
 	var $helpers = array ('Form', 'Html', 'Javascript', 'Number', 'Session') ;
 	
 	var $components = array (
-			'Auth' => array(
-				'authorize' => 'controller',
-			    'actionPath' => 'controllers/',
-		        'loginAction' => array(
-		        	'controller' => 'login',
-		        	'action' => 'login',
-		        	'plugin' => false,
-		        	'admin' => false,
-					),
-				'allowedActions' => array ('*')	
-			),
+//			'Auth' => array(
+//				'authorize' => 'controller',
+//			    'actionPath' => 'controllers/',
+//		        'loginAction' => array(
+//		        	'controller' => 'login',
+//		        	'action' => 'login',
+//		        	'plugin' => false,
+//		        	'admin' => false,
+//					),
+//				'allowedActions' => array ('*')	
+//			),
 			'Session'						
 		);
 	
@@ -58,7 +58,23 @@ class AppController extends Controller {
 		
 		$this->layout='manager_layout';
 		
-		$this->Auth->userModel = 'Funcionario' ;
+//		$sessao = $this->Session->read();
+//		
+//		print_r($sessao);
+//		
+//		if($login){
+//		
+//			if(empty($sessao['funcionario']['id'])){
+//				
+//				$this->redirect('/index');
+//				
+//			}
+//			
+//		}
+		
+		
+		
+		//$this->Auth->userModel = 'Funcionario' ;
 		
 //		var_dump(Configure::read('logado'));
 		
@@ -74,6 +90,29 @@ class AppController extends Controller {
 			
 		
 	}
+	
+	function requestActionHTML ( $url ) {
+    	
+    	$get = $_GET;
+    	$request = $_REQUEST;
+
+    	# Parseia URL para separ GET
+    	$urlParsed =  parse_url ( $url ) ;
+    	parse_str ( $urlParsed['query'] , $_GET ) ;
+    	$_REQUEST = $_GET;
+    
+    	# Executa action e captura retorno
+    	@ob_start ( );
+    	new Dispatcher ( $url );
+    	$content = @ob_get_clean ( );
+    	
+    	# Reseta a GET
+    	$_GET = $get;
+    	$_REQUEST = $request;
+    	
+    	return $content;
+    	
+    }
 	
 	
 	

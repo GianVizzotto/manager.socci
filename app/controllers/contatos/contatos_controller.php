@@ -59,6 +59,9 @@ class ContatosController extends AppController {
 	}
 
 	function remove($id){
+		
+		$this->layout = '' ;
+		
 		if ($this->Contato->deleteContato(Sanitize::clean($id))){
 				$this->Session->setFlash('Contato do cliente exclu&iacute;do com sucesso!', 'flash_confirm');
 				$this->redirect(array('action' => 'index'));
