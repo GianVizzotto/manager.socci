@@ -77,20 +77,20 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'connect' => 'mysql_connect',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => 'takeiteasy',
-		'database' => 'proj01',
+		'host' => '186.202.13.30',
+		'login' => 'socciweb60',
+		'password' => 'ma12socci',
+		'database' => 'socciweb60',
 		'prefix' => '',
 	);
 
 	var $entidades = array(
 		'driver' => 'mysqli',
 		'persistent' => false,
-		'host' => '127.0.0.1',
-		'login' => 'root',
-		'password' => 'takeiteasy',
-		'database' => 'entidades',
+		'host' => '186.202.13.30',
+		'login' => 'socciweb60',
+		'password' => 'ma12socci',
+		'database' => 'socciweb60',
 		'prefix' => '',
 	);
 }
