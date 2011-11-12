@@ -65,6 +65,9 @@ class BancosController extends AppController {
 	}
 
 	function remove($id){
+		
+		$this->layout = '' ;
+		
 		if ($this->Banco->deleteBanco(Sanitize::clean($id))){
 			$this->Session->setFlash('Banco exclu&iacute;do com sucesso!', 'flash_confirm');
 			$this->redirect(array('action' => 'index'));

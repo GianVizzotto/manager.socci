@@ -12,6 +12,7 @@ class UsuariosController extends AppController {
 	
 	var $name = 'Usuarios';
 	var $uses = array ( 'Funcionario' , 'Cargo' , 'Perfil' , 'Setor' , 'Banco' , 'Cidade' , 'Estado' ) ;
+	var $components = array ('Date');
 	
 	
 //	function beforeFilter() {
@@ -34,8 +35,6 @@ class UsuariosController extends AppController {
 	 */
 	
 	function index(){
-		
-		$this->layout = 'manager_layout' ;
 		
 		$funcionarios = $this->Funcionario->listaUsuarios();
 
@@ -77,41 +76,53 @@ class UsuariosController extends AppController {
 		$bancos = array('' => 'Selecione') + (array)$bancos ;
 		$this->set( 'bancos' , $bancos  ) ;
 		
-		if( !empty ( $this->data ) ) {
-						
+		if( !empty($this->data) ) {
+			
+			$this->data['Funcionario']['data_nascimento'] = $this->Date->ReadToDB($this->data['Funcionario']['data_nascimento']);
+			$this->data['Funcionario']['data_contratacao'] = $this->Date->ReadToDB($this->data['Funcionario']['data_contratacao']);
+									
 			$this->Funcionario->set($this->data);
 			
-			if( $this->Funcionario->validates() ) {
+			//if( $this->Funcionario->validates() ) {
 			
-				$this->data['Funcionario']['password'] = $this->Auth->password($this->data['Funcionario']['password']) ;
+				//$this->data['Funcionario']['password'] = $this->Auth->password($this->data['Funcionario']['password']);
 				
 				if( $this->Funcionario->addusuario($this->data) ){
 					
 					$this->Session->setFlash('Usuário cadastrado com sucesso!', 'flash_confirm');
 					$this->redirect('/usuarios');
-					//echo "Adicionado com sucesso";
 					
 				} else {
 					
-//					$this->Session->setFlash('Erro ao cadastrar Usuário!', 'flash_error');					
-//					$this->redirect('/usuarios');
-					
+					$this->Session->setFlash('Erro ao cadastrar Usuário!', 'flash_error');					
+					$this->redirect('/usuarios');
 					
 				}
 				
-			}	
+			//}	
 						
 		} else {
 			
 			$this->data = $this->Funcionario->read() ;
 			
-//			if($this->data['Funcionario']['estado_id']){
-//				
-//				$cidades = $this->requestHtml('/usuarios/cidades'.$this->data['Funcionario']['estado_id']);
-//				$this->set('cidades' , $cidades);
-//			}
+			$this->data['Funcionario']['data_nascimento'] = $this->Date->DBToRead($this->data['Funcionario']['data_nascimento']);
+			$this->data['Funcionario']['data_contratacao'] = $this->Date->DBToRead($this->data['Funcionario']['data_contratacao']);
 			
-		}		
+			//unset($this->data['Funcionario']['password']);
+					
+		}
+
+		if(isset($this->data['Funcionario']['estado_id'])){
+			
+			$cidades = $this->requestActionHTML('/usuarios/cidades/'.$this->data['Funcionario']['estado_id'].'/'.$this->data['Funcionario']['cidade_id']) ;
+			
+		} else {
+			
+			$cidades = $this->requestActionHTML('/usuarios/cidades/') ;
+			
+		}
+
+		$this->set('cidades' , $cidades);
 		
 	}
 	
@@ -146,28 +157,13 @@ class UsuariosController extends AppController {
 		
 	}
 	
-	function cidades($estado_id , $cidade_id = null){
+	function cidades($estado_id, $cidade_id = null){
 		
 		$this->layout = '' ;
-		
-		$estado_id = Sanitize::clean($estado_id) ;
-		
-		echo $cidade_id;
-		
-		if($cidade_id != 'undefined'){
 			
+			$estado_id = Sanitize::clean($estado_id) ;
 			$cidade_id = Sanitize::clean($cidade_id);
-			
 			$cidades = $this->Cidade->getCidades($estado_id , $cidade_id) ;
-			
-		} else {
-			
-			$cidades = $this->Cidade->getCidades($estado_id) ;
-			$cidades = array('' => 'Selecione') + (array)$cidades ;
-			
-		}	
-		
-		
 		
 		$this->set( 'cidades' , $cidades ) ;
 		

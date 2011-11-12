@@ -62,6 +62,9 @@ class CargosController extends AppController {
 	}
 
 	function remove($id){
+		
+		$this->layout = '' ;
+		
 		if ($this->Cargo->deleteCargo(Sanitize::clean($id))){
 			$this->Session->setFlash('Cargo exclu&iacute;do com sucesso!', 'flash_confirm');
 			$this->redirect(array('action' => 'index'));

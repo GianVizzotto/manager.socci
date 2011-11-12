@@ -4,7 +4,7 @@
 		
 		<div class="grid_2 title-crumbs">
 			<div class="page-wrap">
-				<!--<a href="#">Home</a> / <a href="#">Page Layout</a> /--><br />
+				<a href="/dashboard/">Home</a> / Bancos /<br />
 			</div>
 		</div>
 		<div class="grid_2 align_right">
@@ -72,4 +72,3 @@
 		</div>
 	</div>
 </div>
-

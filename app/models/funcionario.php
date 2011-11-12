@@ -15,53 +15,53 @@ class Funcionario extends AppModel {
 	var $primaryKey = 'id' ;
 	
 //	Aqui são definidas as regras de validação do formulário, repare que o nome do campo do formulário necessita corresponder ao seu nome na tabela.
-	var $validate = array (
-		'email_corp' => array(
-			'rule' => 'email',
-			'message' => 'Digite seu email.'
-			),
-		'email_pessoal' => array(
-			'rule' => 'email',
-			'message' => 'Digite seu email.'
-			),	
-		'password' => array(
-			'rule' => 'notEmpty',
-			'message' => 'Digite sua senha.'
-			),
-		'nome' => array(
-			'rule' => 'notEmpty',
-			'message' => 'Esse campo não pode ser vazio'
-			),
-		'sobrenome'=>array(
-			'rule' => 'notEmpty',
-			'message' => 'Esse campo não pode ser vazio'
-			),
-		'data_nascimento'=>array(
-			'rule' => 'notEmpty',
-			'message' => 'Esse campo não pode ser vazio'
-			),	
-		'data_contratacao'=>array(
-			'rule' => 'notEmpty',
-			'message' => 'Esse campo não pode ser vazio'
-			),
-		'cpf'=>array(
-			'rule' => 'notEmpty',
-			'message' => 'Esse campo não pode ser vazio'
-			),
-		'rg'=>array(
-			'rule' => 'notEmpty',
-			'message' => 'Esse campo não pode ser vazio'
-			),	
-		'ctps'=>array(
-			'rule' => 'notEmpty',
-			'message' => 'Esse campo não pode ser vazio'
-			),
-		'ctps'=>array(
-			'rule' => 'notEmpty',
-			'message' => 'Esse campo não pode ser vazio'
-			),			
-			
-		);
+//	var $validate = array (
+//		'email_corp' => array(
+//			'rule' => 'email',
+//			'message' => 'Digite seu email.'
+//			),
+//		'email_pessoal' => array(
+//			'rule' => 'email',
+//			'message' => 'Digite seu email.'
+//			),	
+//		'password' => array(
+//			'rule' => 'notEmpty',
+//			'message' => 'Digite sua senha.'
+//			),
+//		'nome' => array(
+//			'rule' => 'notEmpty',
+//			'message' => 'Esse campo não pode ser vazio'
+//			),
+//		'sobrenome'=>array(
+//			'rule' => 'notEmpty',
+//			'message' => 'Esse campo não pode ser vazio'
+//			),
+//		'data_nascimento'=>array(
+//			'rule' => 'notEmpty',
+//			'message' => 'Esse campo não pode ser vazio'
+//			),	
+//		'data_contratacao'=>array(
+//			'rule' => 'notEmpty',
+//			'message' => 'Esse campo não pode ser vazio'
+//			),
+//		'cpf'=>array(
+//			'rule' => 'notEmpty',
+//			'message' => 'Esse campo não pode ser vazio'
+//			),
+//		'rg'=>array(
+//			'rule' => 'notEmpty',
+//			'message' => 'Esse campo não pode ser vazio'
+//			),	
+//		'ctps'=>array(
+//			'rule' => 'notEmpty',
+//			'message' => 'Esse campo não pode ser vazio'
+//			),
+//		'ctps'=>array(
+//			'rule' => 'notEmpty',
+//			'message' => 'Esse campo não pode ser vazio'
+//			),			
+//			
+//		);
 	
 	/**
 	 * 
@@ -74,7 +74,7 @@ class Funcionario extends AppModel {
 		$login = $this->find('first' , array(
 					'fields'=>array(
 						'id',
-						'senha',
+						'password',
 						'perfil_id'						
 							),
 					'conditions'=>array(
@@ -86,7 +86,7 @@ class Funcionario extends AppModel {
 					
 		if($login){
 			
-			if($info['Funcionario']['senha'] == $login['Funcionario']['senha']){
+			if($info['Funcionario']['password'] == $login['Funcionario']['password']){
 				
 				return $login ;
 				

@@ -67,7 +67,7 @@
 			
 			<label for="data_nascimento">
 				<span>Data Nascimento:</span>
-				<?php echo $this->Form->input('data_nascimento' , array('type' => 'text', 'class' => 'datepicker') ) ;?>
+				<?php echo $this->Form->input('data_nascimento' , array('type' => 'text' , 'class' => 'data') ) ;?>
 			</label>
 			
 			<label for="cpf">
@@ -87,7 +87,7 @@
 			
 			<label for="data_contratação">
 				<span>Data Contratação:</span>
-				<?php echo $this->Form->input('data_contratacao' , array('type' => 'text', 'class' => 'datepicker') ) ;?>
+				<?php echo $this->Form->input('data_contratacao' , array('type' => 'text' ,'class' => 'data') ) ;?>
 			</label>
 			
 			<label for="email_corporativo">
@@ -100,9 +100,11 @@
 				<?php echo $this->Form->input('password' , array('type' => 'password', 'class' => 'textbox') ) ;?>
 			</label>
 			
-			<?php if(isset( $usuario_id)):
+			<?php 
+			if(isset( $usuario_id)):
 				echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $usuario_id) ) ;
-			endif;?>
+			endif;
+			?>
 			
 			<?php echo $this->Form->input('status_usuario_id' , array('type' => 'hidden', 'value' => 1) ) ;?>
 			
@@ -136,13 +138,9 @@
 				<?php echo $this->Form->input('estado_id' , array('options' => $estados , 'class' => 'textbox' , 'onchange' => 'mostraCidades(this.value)') ) ;?>
 			</label>
 			
-			<label id="labelCidades" for="estado" style="display:none;">
-				<span>Cidade:</span>
-				<div id="cidades"></div>
+			<label class="cidades">
+				<?php echo $cidades ;?>
 			</label>
-			
-			<?php // echo $cidades_div ;?>
-			
 			<label for="sexo">
 				<span>Sexo:</span>
 				<?php echo $this->Form->input('sexo' , array( 'options' => array( '' => 'Selecione' , 'm' => 'Masculino' , 'f' => 'Feminino' ) , 'class' => 'textbox') ) ;?>

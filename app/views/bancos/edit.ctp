@@ -4,7 +4,7 @@
 		
 		<div class="grid_2 title-crumbs">
 			<div class="page-wrap">
-				<!--<a href="#">Home</a> / <a href="#">Page Layout</a> /--><br />
+				<a href="#">Home</a> / <a href="#">Page Layout</a> /<br />
 			</div>
 		</div>
 		<div class="grid_2 align_right">
@@ -54,16 +54,16 @@
 			<!-- Nome Field -->
 			<label for="nome">
 				<span>Nome do Banco:</span>
-				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('nome' , array('type' => 'text', 'class' => 'textbox', 'value' => $bancos['Banco']['nome']) ) ;?>
 			</label>
 			
 			<!-- Numero Field -->
 			<label for="numero">
 				<span>N&uacute;mero do Banco</span>
-				<?php echo $this->Form->input('numero' , array('type' => 'text', 'class' => 'textbox small') );?>
+				<?php echo $this->Form->input('numero' , array('type' => 'text', 'class' => 'textbox small', 'value' => $bancos['Banco']['numero']) );?>
 			</label>
 			
-			<?php echo $this->Form->input('id' , array('type' => 'hidden') );?>
+			<?php echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $bancos['Banco']['id']) );?>
 			
 			<!-- Login button with custom CSS classes -->
 						
@@ -74,4 +74,3 @@
 		</div>
 	</div>
 </div>
-
