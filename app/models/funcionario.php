@@ -14,55 +14,100 @@ class Funcionario extends AppModel {
 	var $useDbConfig = 'entidades';
 	var $primaryKey = 'id' ;
 	
-//	Aqui são definidas as regras de validação do formulário, repare que o nome do campo do formulário necessita corresponder ao seu nome na tabela.
-//	var $validate = array (
-//		'email_corp' => array(
-//			'rule' => 'email',
-//			'message' => 'Digite seu email.'
-//			),
-//		'email_pessoal' => array(
-//			'rule' => 'email',
-//			'message' => 'Digite seu email.'
-//			),	
-//		'password' => array(
-//			'rule' => 'notEmpty',
-//			'message' => 'Digite sua senha.'
-//			),
-//		'nome' => array(
-//			'rule' => 'notEmpty',
-//			'message' => 'Esse campo não pode ser vazio'
-//			),
-//		'sobrenome'=>array(
-//			'rule' => 'notEmpty',
-//			'message' => 'Esse campo não pode ser vazio'
-//			),
-//		'data_nascimento'=>array(
-//			'rule' => 'notEmpty',
-//			'message' => 'Esse campo não pode ser vazio'
-//			),	
-//		'data_contratacao'=>array(
-//			'rule' => 'notEmpty',
-//			'message' => 'Esse campo não pode ser vazio'
-//			),
-//		'cpf'=>array(
-//			'rule' => 'notEmpty',
-//			'message' => 'Esse campo não pode ser vazio'
-//			),
-//		'rg'=>array(
-//			'rule' => 'notEmpty',
-//			'message' => 'Esse campo não pode ser vazio'
-//			),	
-//		'ctps'=>array(
-//			'rule' => 'notEmpty',
-//			'message' => 'Esse campo não pode ser vazio'
-//			),
-//		'ctps'=>array(
-//			'rule' => 'notEmpty',
-//			'message' => 'Esse campo não pode ser vazio'
-//			),			
-//			
-//		);
+	//Aqui são definidas as regras de validação do formulário, repare que o nome do campo do formulário necessita corresponder ao seu nome na tabela.
 	
+	var $validate = array (
+		'email_corp' => array(
+			'rule' => 'email',
+			'message' => 'Digite um email válido.'
+			),
+		'email_pessoal' => array(
+			'rule' => 'email',
+			'message' => 'Digite um email válido.'
+			),	
+		'password' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Digite sua senha.'
+			),
+		'nome' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio.'
+			),
+		'sobrenome'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio.'
+			),
+		'data_nascimento'=>array(
+			'rule' => array ('date' , 'ymd') ,
+			'message' => 'Digite uma data válida.'
+			),	
+		'data_contratacao'=>array(
+			'rule' => array ('date' , 'ymd') ,
+			'message' => 'Digite uma data válida.'
+			),
+		'cpf'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio.'
+			),
+		'rg'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio.'
+			),	
+		'ctps'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Esse campo não pode ser vazio.'
+			),
+		'endereco'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Digite um endereço válido.'
+			),
+		'estado_id'=>array(
+			'rule' => 'notEmpty',
+			'message'=>'Escolha o estado.'
+			),
+        'cidade_id'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Escolha a cidade.'
+			),
+        'sexo'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Escolha o sexo.'
+			),
+        'cargo_id'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Selecione o cargo.'
+			),
+        'perfil_id'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Selecione o perfil que o usuário fará parte.'
+			),
+        'setor_id'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Selecione o setor que o usuário pertence.'
+			),
+        'banco_id'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Selecione um banco.'
+			),
+        'agencia'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Informe a agência bancária.'
+			),
+       	'conta'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Informe conta bancária.'
+			),
+     	'password'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Informe uma senha.'
+			),
+      	'tel_celular'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Informe o telefone celular.'
+			)		
+		);
+
+		
 	/**
 	 * 
 	 * Função responsável por verificar a veracidade dos dados informados no login

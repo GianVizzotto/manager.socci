@@ -19,7 +19,7 @@ class UsuariosController extends AppController {
 //		
 //		if ($_SESSION['perfil_id'] != 1 ){
 //			
-//			echo "Se fu";
+//			
 //			
 //		} else {
 //			
@@ -83,11 +83,11 @@ class UsuariosController extends AppController {
 									
 			$this->Funcionario->set($this->data);
 			
-			//if( $this->Funcionario->validates() ) {
+			if( $this->Funcionario->validates() ) {
 			
 				//$this->data['Funcionario']['password'] = $this->Auth->password($this->data['Funcionario']['password']);
-				
-				if( $this->Funcionario->addusuario($this->data) ){
+
+				if ( $this->Funcionario->addusuario($this->data) ) {
 					
 					$this->Session->setFlash('Usuário cadastrado com sucesso!', 'flash_confirm');
 					$this->redirect('/usuarios');
@@ -99,20 +99,28 @@ class UsuariosController extends AppController {
 					
 				}
 				
-			//}	
+			} else {
+				
+				$this->data['Funcionario']['data_nascimento'] = $this->Date->DBToRead($this->data['Funcionario']['data_nascimento']);
+				$this->data['Funcionario']['data_contratacao'] = $this->Date->DBToRead($this->data['Funcionario']['data_contratacao']);
+				
+			}
 						
 		} else {
 			
 			$this->data = $this->Funcionario->read() ;
 			
-			$this->data['Funcionario']['data_nascimento'] = $this->Date->DBToRead($this->data['Funcionario']['data_nascimento']);
-			$this->data['Funcionario']['data_contratacao'] = $this->Date->DBToRead($this->data['Funcionario']['data_contratacao']);
-			
+			if ( isset($this->data['Funcionario']['data_nascimento'] ) ) {
+				$this->data['Funcionario']['data_nascimento'] = $this->Date->DBToRead($this->data['Funcionario']['data_nascimento']);
+			}
+			if ( isset($this->data['Funcionario']['data_contratacao'] ) ) {	
+				$this->data['Funcionario']['data_contratacao'] = $this->Date->DBToRead($this->data['Funcionario']['data_contratacao']);
+			}
 			//unset($this->data['Funcionario']['password']);
 					
 		}
 
-		if(isset($this->data['Funcionario']['estado_id'])){
+		if ( isset($this->data['Funcionario']['estado_id'] ) ) {
 			
 			$cidades = $this->requestActionHTML('/usuarios/cidades/'.$this->data['Funcionario']['estado_id'].'/'.$this->data['Funcionario']['cidade_id']) ;
 			
@@ -157,13 +165,28 @@ class UsuariosController extends AppController {
 		
 	}
 	
-	function cidades($estado_id, $cidade_id = null){
+	/**
+	 * 
+	 * Função que retorna a lista de cidades segundo o estado
+	 * @param int $estado_id
+	 * @param int $cidade_id
+	 */
+	
+	function cidades($estado_id = null, $cidade_id = null){
 		
 		$this->layout = '' ;
+
+		if($estado_id != null){
 			
 			$estado_id = Sanitize::clean($estado_id) ;
 			$cidade_id = Sanitize::clean($cidade_id);
 			$cidades = $this->Cidade->getCidades($estado_id , $cidade_id) ;
+			
+		} else {
+			
+			$cidades = array('' => 'Selecione');
+			
+		}
 		
 		$this->set( 'cidades' , $cidades ) ;
 		

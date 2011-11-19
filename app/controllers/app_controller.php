@@ -98,7 +98,9 @@ class AppController extends Controller {
 
     	# Parseia URL para separ GET
     	$urlParsed =  parse_url ( $url ) ;
-    	parse_str ( $urlParsed['query'] , $_GET ) ;
+    	if(isset($urlParsed['query'])){
+    		parse_str ( $urlParsed['query'] , $_GET ) ;
+    	}
     	$_REQUEST = $_GET;
     
     	# Executa action e captura retorno
