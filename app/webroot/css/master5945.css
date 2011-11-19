@@ -355,7 +355,7 @@ form.styled textarea {
 	font-size:13px;
 	line-height:17px;
 	font-family:sans-serif;
-	padding:2%;
+	padding:1%;
 	margin:0;
 	width:96%;
 	color:#666;
@@ -369,7 +369,7 @@ form.styled textarea {
 form.styled input.small { width:50%; }
 form.styled textarea { height:100px; }
 form.styled label input.file { cursor:pointer; position:absolute; top:5px; right:0; }
-form.styled select { width:100%; }
+form.styled select { width:96%; }
 form.styled .chzn-single span { position:relative; font-weight:normal; left:0; }
 
 form.styled .non-label-section label { display:inline; margin:0; padding:0; border:none; }
