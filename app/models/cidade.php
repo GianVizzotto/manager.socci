@@ -26,10 +26,9 @@ class Cidade extends AppModel {
 		} else {
 			
 			$cidades = array(''=>'Selecione') + (array)$cidades ;
-			
+
 		}	
 
-		
 		
 		return $cidades ;
 					
