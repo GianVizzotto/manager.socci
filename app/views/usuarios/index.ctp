@@ -41,7 +41,8 @@
 <!--							<th class="checkbox-row"><input type="checkbox" class="checkall" /></th>-->
 							 <th>Código</th>
 							<th>Nome</th> 
-							<th>Setor</th> 
+							<th>Setor</th>
+							<th>Status</th> 
 							<th class="options-row">Opções</th> 
 						</tr> 
 					</thead> 
@@ -53,7 +54,8 @@
 <!--							<td><input type="checkbox" name="checkbox" /></td>-->
 							<td><?php echo $funcionario['Funcionario']['id'];?></td>  
 							<td><?php echo $funcionario['Funcionario']['nome'].' '.$funcionario['Funcionario']['sobrenome'];?></td> 
-							<td><?php echo $funcionario['Setor']['nome'];?></td>  
+							<td><?php echo $funcionario['Setor']['nome'];?></td>
+							<td><?php echo $funcionario['Status']['descricao'];?></td>  
 							<td class="center"><a class="icon-button edit" href="/usuarios/add/<?php echo $funcionario['Funcionario']['id'] ?>">Editar</a><a class="icon-button delete" href="/usuarios/remove/<?php echo $funcionario['Funcionario']['id'] ?>"">Remover</a></td> 
 						</tr>
 						

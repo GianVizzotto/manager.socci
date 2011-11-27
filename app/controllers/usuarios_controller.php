@@ -80,6 +80,10 @@ class UsuariosController extends AppController {
 			
 			$this->data['Funcionario']['data_nascimento'] = $this->Date->ReadToDB($this->data['Funcionario']['data_nascimento']);
 			$this->data['Funcionario']['data_contratacao'] = $this->Date->ReadToDB($this->data['Funcionario']['data_contratacao']);
+			
+			if ( isset($this->data['Funcionario']['data_demissao'] ) ) {
+				$this->data['Funcionario']['data_demissao'] = $this->Date->ReadToDB($this->data['Funcionario']['data_demissao']);
+			}
 									
 			$this->Funcionario->set($this->data);
 			
@@ -104,6 +108,10 @@ class UsuariosController extends AppController {
 				$this->data['Funcionario']['data_nascimento'] = $this->Date->DBToRead($this->data['Funcionario']['data_nascimento']);
 				$this->data['Funcionario']['data_contratacao'] = $this->Date->DBToRead($this->data['Funcionario']['data_contratacao']);
 				
+				if ( isset($this->data['Funcionario']['data_demissao'] ) ) {
+					$this->data['Funcionario']['data_demissao'] = $this->Date->ReadToDB($this->data['Funcionario']['data_demissao']);
+				}
+				
 			}
 						
 		} else {
@@ -115,6 +123,11 @@ class UsuariosController extends AppController {
 			}
 			if ( isset($this->data['Funcionario']['data_contratacao'] ) ) {	
 				$this->data['Funcionario']['data_contratacao'] = $this->Date->DBToRead($this->data['Funcionario']['data_contratacao']);
+			}
+			if ( isset($this->data['Funcionario']['data_demissao'] ) && $this->data['Funcionario']['data_demissao'] != '0000-00-00' ) {
+				$this->data['Funcionario']['data_demissao'] = $this->Date->DBToRead($this->data['Funcionario']['data_demissao']);
+			} else {
+				unset($this->data['Funcionario']['data_demissao']);
 			}
 			//unset($this->data['Funcionario']['password']);
 					

@@ -29,6 +29,10 @@ class Funcionario extends AppModel {
 			'rule' => 'notEmpty',
 			'message' => 'Digite sua senha.'
 			),
+		'status_usuario_id' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Defina a situação do usuário.'
+			),	
 		'nome' => array(
 			'rule' => 'notEmpty',
 			'message' => 'Esse campo não pode ser vazio.'
@@ -104,7 +108,15 @@ class Funcionario extends AppModel {
       	'tel_celular'=>array(
 			'rule' => 'notEmpty',
 			'message' => 'Informe o telefone celular.'
-			)		
+			),
+		'nome_mae'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Este campo não pode ser vazio.'
+			),
+		'titulo_eleitor'=>array(
+			'rule' => 'notEmpty',
+			'message' => 'Este campo não pode ser vazio.'
+			)									
 		);
 
 		
@@ -158,7 +170,8 @@ class Funcionario extends AppModel {
 								'Funcionario.id',
 								'Funcionario.nome',
 								'Funcionario.sobrenome',
-								'Setor.nome'
+								'Setor.nome',
+								'Status.descricao'
 								),
 							'joins' => array(
 								array(
@@ -166,9 +179,15 @@ class Funcionario extends AppModel {
 									'alias' => 'Setor',
 									'type'	=>	'INNER',
 									'conditions' => array( 'Funcionario.setor_id = Setor.id'	)
+									),
+								array(
+									'table' => 'status_usuarios',
+									'alias' => 'Status',
+									'type' => 'INNER',
+									'conditions' => array( 'Status.id = Funcionario.status_usuario_id' )
 									)
-								),
-							'conditions' => array('Funcionario.status_usuario_id' => 1 )	
+								)
+							//'conditions' => array('Funcionario.status_usuario_id' => 1 )	
 							)
 						);
 						
