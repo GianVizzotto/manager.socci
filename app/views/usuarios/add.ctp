@@ -90,6 +90,11 @@
 				<?php echo $this->Form->input('data_contratacao' , array('type' => 'text' ,'class' => 'data') ) ;?>
 			</label>
 			
+			<label for="data_demissao">
+				<span>Data Demissão:</span>
+				<?php echo $this->Form->input('data_demissao' , array('type' => 'text' ,'class' => 'data') ) ;?>
+			</label>
+			
 			<label for="email_corporativo">
 				<span>Email Corporativo:<br>(login no sistema)</span>
 				<?php echo $this->Form->input('email_corp' , array('type' => 'text', 'class' => 'textbox') ) ;?>
@@ -100,13 +105,16 @@
 				<?php echo $this->Form->input('password' , array('type' => 'password', 'class' => 'textbox') ) ;?>
 			</label>
 			
+			<label for="Status">
+				<span>Status:</span>
+				<?php echo $this->Form->input('status_usuario_id' , array('options' => array('' => 'Selecione' , '1' => 'Ativo' , '2' => 'Inativo') ) ) ;?>
+			</label>
+			
 			<?php 
 			if(isset( $usuario_id)):
 				echo $this->Form->input('id' , array('type' => 'hidden', 'value' => $usuario_id) ) ;
 			endif;
 			?>
-			
-			<?php echo $this->Form->input('status_usuario_id' , array('type' => 'hidden', 'value' => 1) ) ;?>
 			
 			<label for="email_pessoal">
 				<span>Email Pessoal:</span>
@@ -126,6 +134,26 @@
 			<label for="tel_adicional">
 				<span>Telefone Adicional:</span>
 				<?php echo $this->Form->input('tel_adicional' , array('type' => 'text', 'class' => 'telefone') ) ;?>
+			</label>
+			
+			<label for="nome_pai">
+				<span>Nome do Pai:</span>
+				<?php echo $this->Form->input('nome_pai' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			
+			<label for="nome_mae">
+				<span>Nome da Mãe:</span>
+				<?php echo $this->Form->input('nome_mae' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			
+			<label for="Pis">
+				<span>PIS:</span>
+				<?php echo $this->Form->input('pis' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			
+			<label for="titulo_eleitor">
+				<span>Título de Eleitor:</span>
+				<?php echo $this->Form->input('titulo_eleitor' , array('type' => 'text', 'class' => 'textbox') ) ;?>
 			</label>
 			
 			<label for="endereco">
