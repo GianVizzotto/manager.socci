@@ -194,6 +194,7 @@
 					<li><a href="/bancos">Cadastro de Bancos</a></li>
 					<li><a href="/cargos">Cadastro de Cargos</a></li>
 					<li><a href="/setores">Cadastro de Setores</a></li>
+					<li><a href="/clientes">Cadastro de Clientes</a></li>
 				</ul>
 			</div>
 		</div>
