@@ -31,7 +31,7 @@
 	 		http://tablesorter.com/docs/ -->
 
 			 		
-	<div class="grid_2">
+	<div class="grid_3">
 		<div class="panel">
 			<h2 class="cap">Novo Cliente</h2>
 			<div class="content">
@@ -51,6 +51,7 @@
 					)
 			 	); ?>			
 			<fieldset>
+			<h4><center>Dados da Empresas</center></h4>
 			<label for="razao_social">
 				<span>Razão Social do Cliente:</span>
 				<?php echo $this->Form->input('razao_social' , array('type' => 'text', 'class' => 'textbox') ) ;?>
@@ -69,7 +70,7 @@
 
 			<label for="inscricao_estadual">
 				<span>Inscrição Estadual do Cliente:</span>
-				<?php echo $this->Form->input('inscricao_estadual' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+				<?php echo $this->Form->input('inscricao_estadual' , array('type' => 'text', 'class' => 'insc_estadual') ) ;?>
 			</label>			
 
 			<label for="telefone_1">
@@ -86,12 +87,20 @@
 				<span>Telefone 03 do Cliente:</span>
 				<?php echo $this->Form->input('telefone_3' , array('type' => 'text', 'class' => 'telefone small') ) ;?>
 			</label>
+			<label for="status">
+				<span>Status:</span>
+				<?php echo $this->Form->input('status' , array('options' => array('0'=>'Selecione','1'=>'Prospecção','2'=>'Ativo','3'=>'Inativo'), 'class' => 'textbox') ) ;?>
+			</label>
+						
 			<hr />
 			<label for="endereco_1">
 				<span>Endereço Principal do Cliente:</span>
 				<?php echo $this->Form->input('endereco_1' , array('type' => 'text', 'class' => 'textbox') ) ;?>
 			</label>
-			
+			<label for="cep">
+				<span>CEP Principal do Cliente:</span>
+				<?php echo $this->Form->input('cep' , array('type' => 'text', 'class' => 'cep small') ) ;?>
+			</label>
 			<label for="estado">
 				<span>Estado:</span>
 				<?php echo $this->Form->input('estado_id' , array('options' => $estados , 'class' => 'textbox small' , 'onchange' => 'mostraCidades_2(this.value, ".cidades", "clientes", "cidades")') ) ;?>
@@ -105,7 +114,10 @@
 				<span>Endereço Secundário do Cliente:</span>
 				<?php echo $this->Form->input('endereco_2' , array('type' => 'text', 'class' => 'textbox') ) ;?>
 			</label>
-			
+			<label for="cep_2">
+				<span>CEP Secundário do Cliente:</span>
+				<?php echo $this->Form->input('cep_2' , array('type' => 'text', 'class' => 'cep small') ) ;?>
+			</label>
 			<label for="estado_2">
 				<span>Estado:</span>
 				<?php echo $this->Form->input('estado_id_2' , array('options' => $estados_2 , 'class' => 'textbox small' , 'onchange' => 'mostraCidades_2(this.value, ".cidades_2", "clientes", "cidades_2")') ) ;?>
@@ -131,6 +143,7 @@
 			</label>
 			
 			<hr />
+			<h4><center>Dados de Contato</center></h4>
 			
 			<label for="contato_nome_1">
 				<span>Nome do Contato Principal</span>
@@ -155,8 +168,92 @@
 			</label>
 			<label for="contato_telefone_2">
 				<span>Telefone do Contato Secundário</span>
-				<?php echo $this->Form->input('contato_telefone_1' , array('type' => 'text', 'class' => 'telefone small') ) ;?>
+				<?php echo $this->Form->input('contato_telefone_2' , array('type' => 'text', 'class' => 'telefone small') ) ;?>
 			</label>
+			<hr />
+			<label for="contato_nome_3">
+				<span>Nome do Contato 03</span>
+				<?php echo $this->Form->input('contato_nome_3' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			<label for="contato_email_3">
+				<span>Email do Contato 03</span>
+				<?php echo $this->Form->input('contato_email_3' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			<label for="contato_telefone_3">
+				<span>Telefone do Contato 03</span>
+				<?php echo $this->Form->input('contato_telefone_3' , array('type' => 'text', 'class' => 'telefone small') ) ;?>
+			</label>
+			<hr />
+			<label for="contato_nome_4">
+				<span>Nome do Contato 04</span>
+				<?php echo $this->Form->input('contato_nome_4' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			<label for="contato_email_4">
+				<span>Email do Contato 04</span>
+				<?php echo $this->Form->input('contato_email_4' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			<label for="contato_telefone_4">
+				<span>Telefone do Contato 04</span>
+				<?php echo $this->Form->input('contato_telefone_4' , array('type' => 'text', 'class' => 'telefone small') ) ;?>
+			</label>
+			<hr />
+			<h4><center>Dados de Cobrança (Contato)</center></h4>
+			<label for="cobranca_nome">
+				<span>Nome de contato</span>
+				<?php echo $this->Form->input('cobranca_nome' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			<label for="cobranca_email">
+				<span>Email de contato</span>
+				<?php echo $this->Form->input('cobranca_email' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			<label for="cobranca_telefone">
+				<span>Telefone de contato</span>
+				<?php echo $this->Form->input('cobranca_telefone' , array('type' => 'text', 'class' => 'telefone small') ) ;?>
+			</label>
+			<label for="cobranca_endereco">
+				<span>Endereco de contato</span>
+				<?php echo $this->Form->input('cobranca_endereco' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			<label for="cobranca_cep">
+				<span>CEP de contato</span>
+				<?php echo $this->Form->input('cobranca_cep' , array('type' => 'text', 'class' => 'cep small') ) ;?>
+			</label>
+			<label for="cobranca_estado_id">
+				<span>Estado:</span>
+				<?php echo $this->Form->input('cobranca_estado_id' , array('options' => $cobranca_estados , 'class' => 'textbox small' , 'onchange' => 'mostraCidades_2(this.value, ".cobranca_cidades", "clientes", "cobranca_cidades")') ) ;?>
+			</label>		
+			<label class="cobranca_cidades">
+				<?php echo $cobranca_cidades ;?>
+			</label>
+			
+			<hr />
+			<h4><center>Referências Comerciais</center></h4>
+			<label for="referencia_area">
+				<span>&Aacute;rea de Atua&ccedil;&atilde;o Empresa 1</span>
+				<?php echo $this->Form->input('referencia_area_1' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			<label for="referencia_contato">
+				<span>Contato Empresa 1</span>
+				<?php echo $this->Form->input('referencia_contato_1' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>			
+			<label for="referencia_telefone">
+				<span>Telefone Empresa 1</span>
+				<?php echo $this->Form->input('referencia_telefone_1' , array('type' => 'text', 'class' => 'telefone small') ) ;?>
+			</label>
+			<hr />
+			<label for="referencia_area_2">
+				<span>&Aacute;rea de Atua&ccedil;&atilde;o Empresa 2</span>
+				<?php echo $this->Form->input('referencia_area_2' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>
+			<label for="referencia_contato_2">
+				<span>Contato Empresa 2</span>
+				<?php echo $this->Form->input('referencia_contato_2' , array('type' => 'text', 'class' => 'textbox') ) ;?>
+			</label>			
+			<label for="referencia_telefone_2">
+				<span>Telefone Empresa 2</span>
+				<?php echo $this->Form->input('referencia_telefone_2' , array('type' => 'text', 'class' => 'telefone small') ) ;?>
+			</label>
+			
 			<?php echo $this->Form->button('Salvar' , array ('class' => 'button medium green float_right') ) ;?>
 			</fieldset>
 			

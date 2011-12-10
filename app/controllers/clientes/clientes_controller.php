@@ -38,6 +38,9 @@ class ClientesController extends AppController {
 		$estados_2 = array('' => 'Selecione') + (array)$estados_2 ;
 		$this->set( 'estados_2' , $estados_2  ) ;
 		
+		$cobranca_estados = $this->Estado->getEstados() ;
+		$cobranca_estados = array('' => 'Selecione') + (array)$cobranca_estados ;
+		$this->set( 'cobranca_estados' , $cobranca_estados  ) ;		
 		
 		if (empty($this->data)){
 			$this->data = $this->Cliente->read();
@@ -68,6 +71,13 @@ class ClientesController extends AppController {
 		}
 		$this->set('cidades_2' , $cidades_2);
 		
+		if(isset($this->data['Cliente']['cobranca_estado_id'])){
+			$cobranca_cidades = $this->requestActionHTML('/clientes/cobranca_cidades/'.$this->data['Cliente']['cobranca_estado_id'].'/'.$this->data['Cliente']['cobranca_cidade_id']) ;
+		} else {
+			$cobranca_cidades = $this->requestActionHTML('/clientes/cobranca_cidades/') ;
+		}
+		$this->set('cobranca_cidades' , $cobranca_cidades);
+		
 	}
 	
 	function add(){
@@ -80,6 +90,10 @@ class ClientesController extends AppController {
 		$estados_2 = $this->Estado->getEstados() ;
 		$estados_2 = array('' => 'Selecione') + (array)$estados_2 ;
 		$this->set( 'estados_2' , $estados_2  ) ;
+		
+		$cobranca_estados = $this->Estado->getEstados() ;
+		$cobranca_estados = array('' => 'Selecione') + (array)$cobranca_estados ;
+		$this->set( 'cobranca_estados' , $cobranca_estados  ) ;
 
 		
 		if (!empty($this->data)){
@@ -108,6 +122,13 @@ class ClientesController extends AppController {
 			$cidades_2 = $this->requestActionHTML('/clientes/cidades_2/') ;
 		}
 		$this->set('cidades_2' , $cidades_2);
+		
+		if(isset($this->data['Cliente']['cobranca_estado_id'])){
+			$cobranca_cidades = $this->requestActionHTML('/clientes/cobranca_cidades/'.$this->data['Cliente']['cobranca_estado_id'].'/'.$this->data['Cliente']['cobranca_cidade_id']) ;
+		} else {
+			$cobranca_cidades = $this->requestActionHTML('/clientes/cobranca_cidades/') ;
+		}
+		$this->set('cobranca_cidades' , $cobranca_cidades);
 		
 	}
 
@@ -138,6 +159,19 @@ class ClientesController extends AppController {
 	}
 	
 	function cidades_2($estado_id = 0, $cidade_id = null){
+		
+		$this->layout = '' ;
+			
+			$estado_id = Sanitize::clean($estado_id) ;
+			$cidade_id = Sanitize::clean($cidade_id);
+			$cidades = $this->Cidade->getCidades($estado_id , $cidade_id) ;
+		
+		$this->set( 'cidades' , $cidades ) ;
+		$this->set( 'cidades_id' , $cidade_id ) ;
+		
+	}
+	
+	function cobranca_cidades($estado_id = 0, $cidade_id = null){
 		
 		$this->layout = '' ;
 			
