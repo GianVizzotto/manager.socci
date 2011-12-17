@@ -24,25 +24,9 @@ class Cliente extends AppModel {
 			'rule' => 'notEmpty',
 			'message' => 'Digite o nome fantasia.'
 			),
-		'cnpj' => array(
-			'rule' => 'notEmpty',
-			'message' => 'Digite o número do CNPJ.'
-			),
 		'telefone_1' => array(
 			'rule' => 'notEmpty',
 			'message' => 'Digite o número do telefone.'
-			),
-		'endereco_1' => array(
-			'rule' => 'notEmpty',
-			'message' => 'Digite o endereço principal do cliente.'
-			),
-		'estado_id' => array(
-			'rule' => 'notEmpty',
-			'message' => 'Escolha o Estado.'
-			),
-		'cidade_id' => array(
-			'rule' => 'notEmpty',
-			'message' => 'Escolha a Cidade.'
 			)
 		);
 		
